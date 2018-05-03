@@ -1,0 +1,1184 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A5FFEA22099EF69000268C1 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE602099EF69000268C1 /* APIHelper.swift */; };
+		4A5FFEA32099EF69000268C1 /* AlamofireImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE612099EF69000268C1 /* AlamofireImplementations.swift */; };
+		4A5FFEA42099EF69000268C1 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE632099EF69000268C1 /* UserAPI.swift */; };
+		4A5FFEA52099EF69000268C1 /* VideoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE642099EF69000268C1 /* VideoAPI.swift */; };
+		4A5FFEA62099EF69000268C1 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE652099EF69000268C1 /* AuthAPI.swift */; };
+		4A5FFEA72099EF69000268C1 /* SystemAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE662099EF69000268C1 /* SystemAPI.swift */; };
+		4A5FFEA82099EF69000268C1 /* CorsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE672099EF69000268C1 /* CorsAPI.swift */; };
+		4A5FFEA92099EF69000268C1 /* ReactionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE682099EF69000268C1 /* ReactionAPI.swift */; };
+		4A5FFEAA2099EF69000268C1 /* CodableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE692099EF69000268C1 /* CodableHelper.swift */; };
+		4A5FFEAB2099EF69000268C1 /* JSONEncodableEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE6A2099EF69000268C1 /* JSONEncodableEncoding.swift */; };
+		4A5FFEAC2099EF69000268C1 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE6B2099EF69000268C1 /* APIs.swift */; };
+		4A5FFEAD2099EF69000268C1 /* RequestReactionLikeListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE6D2099EF69000268C1 /* RequestReactionLikeListType.swift */; };
+		4A5FFEAE2099EF69000268C1 /* RequestAuthConfirmSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE6E2099EF69000268C1 /* RequestAuthConfirmSignUp.swift */; };
+		4A5FFEAF2099EF69000268C1 /* Id.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE6F2099EF69000268C1 /* Id.swift */; };
+		4A5FFEB02099EF69000268C1 /* ReactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE702099EF69000268C1 /* ReactionList.swift */; };
+		4A5FFEB12099EF69000268C1 /* TimelineEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE712099EF69000268C1 /* TimelineEvent.swift */; };
+		4A5FFEB22099EF69000268C1 /* RequestAuthConfirmForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE722099EF69000268C1 /* RequestAuthConfirmForgotPassword.swift */; };
+		4A5FFEB32099EF69000268C1 /* IdReadOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE732099EF69000268C1 /* IdReadOnly.swift */; };
+		4A5FFEB42099EF69000268C1 /* InstagramId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE742099EF69000268C1 /* InstagramId.swift */; };
+		4A5FFEB52099EF69000268C1 /* FulltextPhrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE752099EF69000268C1 /* FulltextPhrase.swift */; };
+		4A5FFEB62099EF69000268C1 /* Hashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE762099EF69000268C1 /* Hashtag.swift */; };
+		4A5FFEB72099EF69000268C1 /* RequestListStartKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE772099EF69000268C1 /* RequestListStartKey.swift */; };
+		4A5FFEB82099EF69000268C1 /* RequestListSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE782099EF69000268C1 /* RequestListSize.swift */; };
+		4A5FFEB92099EF69000268C1 /* RequestAuthForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE792099EF69000268C1 /* RequestAuthForgotPassword.swift */; };
+		4A5FFEBA2099EF69000268C1 /* RequestAuthResendConfirmationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE7A2099EF69000268C1 /* RequestAuthResendConfirmationCode.swift */; };
+		4A5FFEBB2099EF69000268C1 /* ReactionCommentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE7B2099EF69000268C1 /* ReactionCommentList.swift */; };
+		4A5FFEBC2099EF69000268C1 /* RequestAuthSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE7C2099EF69000268C1 /* RequestAuthSignUp.swift */; };
+		4A5FFEBD2099EF69000268C1 /* RequestAuthSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE7D2099EF69000268C1 /* RequestAuthSignIn.swift */; };
+		4A5FFEBE2099EF69000268C1 /* RequestReactionListSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE7E2099EF69000268C1 /* RequestReactionListSort.swift */; };
+		4A5FFEBF2099EF69000268C1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE7F2099EF69000268C1 /* User.swift */; };
+		4A5FFEC02099EF69000268C1 /* ResponseEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE802099EF69000268C1 /* ResponseEmpty.swift */; };
+		4A5FFEC12099EF69000268C1 /* ReactionLikeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE812099EF69000268C1 /* ReactionLikeList.swift */; };
+		4A5FFEC22099EF69000268C1 /* RequestReactionCommentListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE822099EF69000268C1 /* RequestReactionCommentListType.swift */; };
+		4A5FFEC42099EF69000268C1 /* Reaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE842099EF69000268C1 /* Reaction.swift */; };
+		4A5FFEC52099EF69000268C1 /* FacebookId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE852099EF69000268C1 /* FacebookId.swift */; };
+		4A5FFEC72099EF69000268C1 /* UserId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE872099EF69000268C1 /* UserId.swift */; };
+		4A5FFEC82099EF69000268C1 /* RequestUserListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE882099EF69000268C1 /* RequestUserListType.swift */; };
+		4A5FFEC92099EF69000268C1 /* UserMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE892099EF69000268C1 /* UserMe.swift */; };
+		4A5FFECA2099EF69000268C1 /* UserIdReadOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE8A2099EF69000268C1 /* UserIdReadOnly.swift */; };
+		4A5FFECB2099EF69000268C1 /* RequestVideoListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE8B2099EF69000268C1 /* RequestVideoListType.swift */; };
+		4A5FFECC2099EF69000268C1 /* MediaFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE8C2099EF69000268C1 /* MediaFile.swift */; };
+		4A5FFECD2099EF69000268C1 /* RequestReactionListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE8D2099EF69000268C1 /* RequestReactionListType.swift */; };
+		4A5FFECE2099EF69000268C1 /* ResponseInitiateUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE8E2099EF69000268C1 /* ResponseInitiateUpload.swift */; };
+		4A5FFECF2099EF69000268C1 /* ReactionLikesCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE8F2099EF69000268C1 /* ReactionLikesCounts.swift */; };
+		4A5FFED02099EF69000268C1 /* MongoObjectId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE902099EF69000268C1 /* MongoObjectId.swift */; };
+		4A5FFED12099EF69000268C1 /* UserIdsStringList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE912099EF69000268C1 /* UserIdsStringList.swift */; };
+		4A5FFED22099EF69000268C1 /* ReactionLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE922099EF69000268C1 /* ReactionLike.swift */; };
+		4A5FFED32099EF69000268C1 /* RequestPublishAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE932099EF69000268C1 /* RequestPublishAvatar.swift */; };
+		4A5FFED42099EF69000268C1 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE942099EF69000268C1 /* Video.swift */; };
+		4A5FFED52099EF69000268C1 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE952099EF69000268C1 /* UserList.swift */; };
+		4A5FFED62099EF69000268C1 /* ReactionComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE962099EF69000268C1 /* ReactionComment.swift */; };
+		4A5FFED72099EF69000268C1 /* RequestQueryBoolean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE972099EF69000268C1 /* RequestQueryBoolean.swift */; };
+		4A5FFED82099EF69000268C1 /* RequestAuthChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE982099EF69000268C1 /* RequestAuthChangePassword.swift */; };
+		4A5FFED92099EF69000268C1 /* ResponseAuthSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE992099EF69000268C1 /* ResponseAuthSignIn.swift */; };
+		4A5FFEDA2099EF69000268C1 /* RequestAuthRefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE9A2099EF69000268C1 /* RequestAuthRefreshToken.swift */; };
+		4A5FFEDB2099EF69000268C1 /* ResponseAuthSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE9B2099EF69000268C1 /* ResponseAuthSignUp.swift */; };
+		4A5FFEDC2099EF69000268C1 /* VideoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE9C2099EF69000268C1 /* VideoList.swift */; };
+		4A5FFEDD2099EF69000268C1 /* YoutubeId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE9D2099EF69000268C1 /* YoutubeId.swift */; };
+		4A5FFEDE2099EF69000268C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE9E2099EF69000268C1 /* Extensions.swift */; };
+		4A5FFEDF2099EF69000268C1 /* JSONEncodingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFE9F2099EF69000268C1 /* JSONEncodingHelper.swift */; };
+		4A5FFEE02099EF69000268C1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFEA02099EF69000268C1 /* Models.swift */; };
+		4A5FFEE12099EF69000268C1 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFEA12099EF69000268C1 /* Configuration.swift */; };
+		4A5FFF6A209AD3EF000268C1 /* NibRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF18209AD3EF000268C1 /* NibRepresentable.swift */; };
+		4A5FFF6B209AD3EF000268C1 /* TabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5FFF19209AD3EF000268C1 /* TabBarController.xib */; };
+		4A5FFF6C209AD3EF000268C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5FFF1A209AD3EF000268C1 /* LaunchScreen.storyboard */; };
+		4A5FFF6D209AD3EF000268C1 /* Collection+shaffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF1C209AD3EF000268C1 /* Collection+shaffle.swift */; };
+		4A5FFF6E209AD3EF000268C1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF1D209AD3EF000268C1 /* TabBarController.swift */; };
+		4A5FFF6F209AD3EF000268C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF1F209AD3EF000268C1 /* AppDelegate.swift */; };
+		4A5FFF70209AD3EF000268C1 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF20209AD3EF000268C1 /* ModuleBuilder.swift */; };
+		4A5FFF71209AD3EF000268C1 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF21209AD3EF000268C1 /* Navigator.swift */; };
+		4A5FFF72209AD3EF000268C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5FFF22209AD3EF000268C1 /* Assets.xcassets */; };
+		4A5FFF73209AD3EF000268C1 /* ReactionGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF26209AD3EF000268C1 /* ReactionGridViewModel.swift */; };
+		4A5FFF74209AD3EF000268C1 /* ReactionGridPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF28209AD3EF000268C1 /* ReactionGridPresenter.swift */; };
+		4A5FFF75209AD3EF000268C1 /* ReactionGridViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF2A209AD3EF000268C1 /* ReactionGridViewOutput.swift */; };
+		4A5FFF76209AD3EF000268C1 /* ReactionGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF2C209AD3EF000268C1 /* ReactionGridCell.swift */; };
+		4A5FFF77209AD3EF000268C1 /* ReactionGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5FFF2D209AD3EF000268C1 /* ReactionGridCell.xib */; };
+		4A5FFF78209AD3EF000268C1 /* ReactionGridViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF2E209AD3EF000268C1 /* ReactionGridViewInput.swift */; };
+		4A5FFF79209AD3EF000268C1 /* ReactionGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF30209AD3EF000268C1 /* ReactionGridViewController.swift */; };
+		4A5FFF7A209AD3EF000268C1 /* ReactionGridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5FFF31209AD3EF000268C1 /* ReactionGridViewController.xib */; };
+		4A5FFF7B209AD3EF000268C1 /* ReactionGridInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF33209AD3EF000268C1 /* ReactionGridInteractorOutput.swift */; };
+		4A5FFF7C209AD3EF000268C1 /* ReactionGridInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF34209AD3EF000268C1 /* ReactionGridInteractor.swift */; };
+		4A5FFF7D209AD3EF000268C1 /* ReactionGridInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF35209AD3EF000268C1 /* ReactionGridInteractorInput.swift */; };
+		4A5FFF7E209AD3EF000268C1 /* ReactionFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF38209AD3EF000268C1 /* ReactionFeedViewModel.swift */; };
+		4A5FFF7F209AD3EF000268C1 /* ReactionFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF3A209AD3EF000268C1 /* ReactionFeedPresenter.swift */; };
+		4A5FFF80209AD3EF000268C1 /* ReactionFeedViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF3C209AD3EF000268C1 /* ReactionFeedViewInput.swift */; };
+		4A5FFF81209AD3EF000268C1 /* ReactionFeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5FFF3E209AD3EF000268C1 /* ReactionFeedViewController.xib */; };
+		4A5FFF82209AD3EF000268C1 /* ReactionFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF3F209AD3EF000268C1 /* ReactionFeedViewController.swift */; };
+		4A5FFF83209AD3EF000268C1 /* ReactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF41209AD3EF000268C1 /* ReactionCell.swift */; };
+		4A5FFF84209AD3EF000268C1 /* ReactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5FFF42209AD3EF000268C1 /* ReactionCell.xib */; };
+		4A5FFF85209AD3EF000268C1 /* ReactionFeedViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF43209AD3EF000268C1 /* ReactionFeedViewOutput.swift */; };
+		4A5FFF86209AD3EF000268C1 /* ReactionFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF45209AD3EF000268C1 /* ReactionFeedInteractor.swift */; };
+		4A5FFF87209AD3EF000268C1 /* ReactionFeedInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF46209AD3EF000268C1 /* ReactionFeedInteractorOutput.swift */; };
+		4A5FFF88209AD3EF000268C1 /* ReactionFeedInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF47209AD3EF000268C1 /* ReactionFeedInteractorInput.swift */; };
+		4A5FFF89209AD3EF000268C1 /* ReactionFeedRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF49209AD3EF000268C1 /* ReactionFeedRouterInput.swift */; };
+		4A5FFF8A209AD3EF000268C1 /* ReactionFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF4A209AD3EF000268C1 /* ReactionFeedRouter.swift */; };
+		4A5FFF8B209AD3EF000268C1 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF4D209AD3EF000268C1 /* LoginPresenter.swift */; };
+		4A5FFF8C209AD3EF000268C1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5FFF4F209AD3EF000268C1 /* LoginViewController.xib */; };
+		4A5FFF8D209AD3EF000268C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF50209AD3EF000268C1 /* LoginViewController.swift */; };
+		4A5FFF8E209AD3EF000268C1 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF52209AD3EF000268C1 /* LoginInteractor.swift */; };
+		4A5FFF90209AD3EF000268C1 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF56209AD3EF000268C1 /* ImageService.swift */; };
+		4A5FFF91209AD3EF000268C1 /* DefaultImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF57209AD3EF000268C1 /* DefaultImageService.swift */; };
+		4A5FFF92209AD3EF000268C1 /* DefaultAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF59209AD3EF000268C1 /* DefaultAuthService.swift */; };
+		4A5FFF93209AD3EF000268C1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF5A209AD3EF000268C1 /* AuthService.swift */; };
+		4A5FFF94209AD3EF000268C1 /* InputValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF5C209AD3EF000268C1 /* InputValidationService.swift */; };
+		4A5FFF95209AD3EF000268C1 /* DefaultInputValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF5D209AD3EF000268C1 /* DefaultInputValidationService.swift */; };
+		4A5FFF96209AD3EF000268C1 /* RealmStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF5F209AD3EF000268C1 /* RealmStorable.swift */; };
+		4A5FFF97209AD3EF000268C1 /* DefaultDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF60209AD3EF000268C1 /* DefaultDatabaseService.swift */; };
+		4A5FFF98209AD3EF000268C1 /* DatabaseToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF61209AD3EF000268C1 /* DatabaseToken.swift */; };
+		4A5FFF99209AD3EF000268C1 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF62209AD3EF000268C1 /* DatabaseService.swift */; };
+		4A5FFF9A209AD3EF000268C1 /* DefaultWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF64209AD3EF000268C1 /* DefaultWebService.swift */; };
+		4A5FFF9B209AD3EF000268C1 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF65209AD3EF000268C1 /* WebService.swift */; };
+		4A5FFF9C209AD3EF000268C1 /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF67209AD3EF000268C1 /* UserObject.swift */; };
+		4A5FFF9D209AD3EF000268C1 /* ReactionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF68209AD3EF000268C1 /* ReactionObject.swift */; };
+		4A5FFF9E209AD3EF000268C1 /* ReactionListObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FFF69209AD3EF000268C1 /* ReactionListObject.swift */; };
+		4A8C68F82097C6E90068FA82 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4A8C68F72097C6E90068FA82 /* Podfile */; };
+		4A8C6BF02098C5400068FA82 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8C6BEE2098C5400068FA82 /* Realm.framework */; };
+		4A8C6BF12098C5400068FA82 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8C6BEF2098C5400068FA82 /* RealmSwift.framework */; };
+		4A8C6BF62098C5D20068FA82 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A8C6BEE2098C5400068FA82 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A8C6BF72098C5D20068FA82 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A8C6BEF2098C5400068FA82 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AEE883C209AD74E00F66DBB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AEE883B209AD74E00F66DBB /* Info.plist */; };
+		4AEE883F209B0D6D00F66DBB /* ReactionGridRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEE883E209B0D6D00F66DBB /* ReactionGridRouterInput.swift */; };
+		4AEE8841209B0D9300F66DBB /* ReactionGridRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEE8840209B0D9300F66DBB /* ReactionGridRouter.swift */; };
+		931D6FF931666D1FF324C1F7 /* Pods_ReactionsViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7332444C0FF2B03F4B0874 /* Pods_ReactionsViewer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4A8C6BF52098C5C90068FA82 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4A8C6BF62098C5D20068FA82 /* Realm.framework in CopyFiles */,
+				4A8C6BF72098C5D20068FA82 /* RealmSwift.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1E04B1A56A67210448D8467B /* Pods-VIPER-REALM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-REALM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VIPER-REALM/Pods-VIPER-REALM.debug.xcconfig"; sourceTree = "<group>"; };
+		4A5FFE602099EF69000268C1 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		4A5FFE612099EF69000268C1 /* AlamofireImplementations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireImplementations.swift; sourceTree = "<group>"; };
+		4A5FFE632099EF69000268C1 /* UserAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		4A5FFE642099EF69000268C1 /* VideoAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoAPI.swift; sourceTree = "<group>"; };
+		4A5FFE652099EF69000268C1 /* AuthAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		4A5FFE662099EF69000268C1 /* SystemAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAPI.swift; sourceTree = "<group>"; };
+		4A5FFE672099EF69000268C1 /* CorsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorsAPI.swift; sourceTree = "<group>"; };
+		4A5FFE682099EF69000268C1 /* ReactionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionAPI.swift; sourceTree = "<group>"; };
+		4A5FFE692099EF69000268C1 /* CodableHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableHelper.swift; sourceTree = "<group>"; };
+		4A5FFE6A2099EF69000268C1 /* JSONEncodableEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodableEncoding.swift; sourceTree = "<group>"; };
+		4A5FFE6B2099EF69000268C1 /* APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
+		4A5FFE6D2099EF69000268C1 /* RequestReactionLikeListType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestReactionLikeListType.swift; sourceTree = "<group>"; };
+		4A5FFE6E2099EF69000268C1 /* RequestAuthConfirmSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAuthConfirmSignUp.swift; sourceTree = "<group>"; };
+		4A5FFE6F2099EF69000268C1 /* Id.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Id.swift; sourceTree = "<group>"; };
+		4A5FFE702099EF69000268C1 /* ReactionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionList.swift; sourceTree = "<group>"; };
+		4A5FFE712099EF69000268C1 /* TimelineEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineEvent.swift; sourceTree = "<group>"; };
+		4A5FFE722099EF69000268C1 /* RequestAuthConfirmForgotPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAuthConfirmForgotPassword.swift; sourceTree = "<group>"; };
+		4A5FFE732099EF69000268C1 /* IdReadOnly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdReadOnly.swift; sourceTree = "<group>"; };
+		4A5FFE742099EF69000268C1 /* InstagramId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramId.swift; sourceTree = "<group>"; };
+		4A5FFE752099EF69000268C1 /* FulltextPhrase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FulltextPhrase.swift; sourceTree = "<group>"; };
+		4A5FFE762099EF69000268C1 /* Hashtag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hashtag.swift; sourceTree = "<group>"; };
+		4A5FFE772099EF69000268C1 /* RequestListStartKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestListStartKey.swift; sourceTree = "<group>"; };
+		4A5FFE782099EF69000268C1 /* RequestListSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestListSize.swift; sourceTree = "<group>"; };
+		4A5FFE792099EF69000268C1 /* RequestAuthForgotPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAuthForgotPassword.swift; sourceTree = "<group>"; };
+		4A5FFE7A2099EF69000268C1 /* RequestAuthResendConfirmationCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAuthResendConfirmationCode.swift; sourceTree = "<group>"; };
+		4A5FFE7B2099EF69000268C1 /* ReactionCommentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionCommentList.swift; sourceTree = "<group>"; };
+		4A5FFE7C2099EF69000268C1 /* RequestAuthSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAuthSignUp.swift; sourceTree = "<group>"; };
+		4A5FFE7D2099EF69000268C1 /* RequestAuthSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAuthSignIn.swift; sourceTree = "<group>"; };
+		4A5FFE7E2099EF69000268C1 /* RequestReactionListSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestReactionListSort.swift; sourceTree = "<group>"; };
+		4A5FFE7F2099EF69000268C1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4A5FFE802099EF69000268C1 /* ResponseEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEmpty.swift; sourceTree = "<group>"; };
+		4A5FFE812099EF69000268C1 /* ReactionLikeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionLikeList.swift; sourceTree = "<group>"; };
+		4A5FFE822099EF69000268C1 /* RequestReactionCommentListType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestReactionCommentListType.swift; sourceTree = "<group>"; };
+		4A5FFE842099EF69000268C1 /* Reaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reaction.swift; sourceTree = "<group>"; };
+		4A5FFE852099EF69000268C1 /* FacebookId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookId.swift; sourceTree = "<group>"; };
+		4A5FFE872099EF69000268C1 /* UserId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserId.swift; sourceTree = "<group>"; };
+		4A5FFE882099EF69000268C1 /* RequestUserListType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestUserListType.swift; sourceTree = "<group>"; };
+		4A5FFE892099EF69000268C1 /* UserMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMe.swift; sourceTree = "<group>"; };
+		4A5FFE8A2099EF69000268C1 /* UserIdReadOnly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdReadOnly.swift; sourceTree = "<group>"; };
+		4A5FFE8B2099EF69000268C1 /* RequestVideoListType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestVideoListType.swift; sourceTree = "<group>"; };
+		4A5FFE8C2099EF69000268C1 /* MediaFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaFile.swift; sourceTree = "<group>"; };
+		4A5FFE8D2099EF69000268C1 /* RequestReactionListType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestReactionListType.swift; sourceTree = "<group>"; };
+		4A5FFE8E2099EF69000268C1 /* ResponseInitiateUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseInitiateUpload.swift; sourceTree = "<group>"; };
+		4A5FFE8F2099EF69000268C1 /* ReactionLikesCounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionLikesCounts.swift; sourceTree = "<group>"; };
+		4A5FFE902099EF69000268C1 /* MongoObjectId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MongoObjectId.swift; sourceTree = "<group>"; };
+		4A5FFE912099EF69000268C1 /* UserIdsStringList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdsStringList.swift; sourceTree = "<group>"; };
+		4A5FFE922099EF69000268C1 /* ReactionLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionLike.swift; sourceTree = "<group>"; };
+		4A5FFE932099EF69000268C1 /* RequestPublishAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPublishAvatar.swift; sourceTree = "<group>"; };
+		4A5FFE942099EF69000268C1 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		4A5FFE952099EF69000268C1 /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		4A5FFE962099EF69000268C1 /* ReactionComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionComment.swift; sourceTree = "<group>"; };
+		4A5FFE972099EF69000268C1 /* RequestQueryBoolean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestQueryBoolean.swift; sourceTree = "<group>"; };
+		4A5FFE982099EF69000268C1 /* RequestAuthChangePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAuthChangePassword.swift; sourceTree = "<group>"; };
+		4A5FFE992099EF69000268C1 /* ResponseAuthSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseAuthSignIn.swift; sourceTree = "<group>"; };
+		4A5FFE9A2099EF69000268C1 /* RequestAuthRefreshToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAuthRefreshToken.swift; sourceTree = "<group>"; };
+		4A5FFE9B2099EF69000268C1 /* ResponseAuthSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseAuthSignUp.swift; sourceTree = "<group>"; };
+		4A5FFE9C2099EF69000268C1 /* VideoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoList.swift; sourceTree = "<group>"; };
+		4A5FFE9D2099EF69000268C1 /* YoutubeId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeId.swift; sourceTree = "<group>"; };
+		4A5FFE9E2099EF69000268C1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4A5FFE9F2099EF69000268C1 /* JSONEncodingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodingHelper.swift; sourceTree = "<group>"; };
+		4A5FFEA02099EF69000268C1 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		4A5FFEA12099EF69000268C1 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		4A5FFF18209AD3EF000268C1 /* NibRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibRepresentable.swift; sourceTree = "<group>"; };
+		4A5FFF19209AD3EF000268C1 /* TabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarController.xib; sourceTree = "<group>"; };
+		4A5FFF1B209AD3EF000268C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A5FFF1C209AD3EF000268C1 /* Collection+shaffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+shaffle.swift"; sourceTree = "<group>"; };
+		4A5FFF1D209AD3EF000268C1 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4A5FFF1F209AD3EF000268C1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A5FFF20209AD3EF000268C1 /* ModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		4A5FFF21209AD3EF000268C1 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		4A5FFF22209AD3EF000268C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A5FFF26209AD3EF000268C1 /* ReactionGridViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionGridViewModel.swift; sourceTree = "<group>"; };
+		4A5FFF28209AD3EF000268C1 /* ReactionGridPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionGridPresenter.swift; sourceTree = "<group>"; };
+		4A5FFF2A209AD3EF000268C1 /* ReactionGridViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionGridViewOutput.swift; sourceTree = "<group>"; };
+		4A5FFF2C209AD3EF000268C1 /* ReactionGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionGridCell.swift; sourceTree = "<group>"; };
+		4A5FFF2D209AD3EF000268C1 /* ReactionGridCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReactionGridCell.xib; sourceTree = "<group>"; };
+		4A5FFF2E209AD3EF000268C1 /* ReactionGridViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionGridViewInput.swift; sourceTree = "<group>"; };
+		4A5FFF30209AD3EF000268C1 /* ReactionGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionGridViewController.swift; sourceTree = "<group>"; };
+		4A5FFF31209AD3EF000268C1 /* ReactionGridViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReactionGridViewController.xib; sourceTree = "<group>"; };
+		4A5FFF33209AD3EF000268C1 /* ReactionGridInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionGridInteractorOutput.swift; sourceTree = "<group>"; };
+		4A5FFF34209AD3EF000268C1 /* ReactionGridInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionGridInteractor.swift; sourceTree = "<group>"; };
+		4A5FFF35209AD3EF000268C1 /* ReactionGridInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionGridInteractorInput.swift; sourceTree = "<group>"; };
+		4A5FFF38209AD3EF000268C1 /* ReactionFeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionFeedViewModel.swift; sourceTree = "<group>"; };
+		4A5FFF3A209AD3EF000268C1 /* ReactionFeedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionFeedPresenter.swift; sourceTree = "<group>"; };
+		4A5FFF3C209AD3EF000268C1 /* ReactionFeedViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionFeedViewInput.swift; sourceTree = "<group>"; };
+		4A5FFF3E209AD3EF000268C1 /* ReactionFeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReactionFeedViewController.xib; sourceTree = "<group>"; };
+		4A5FFF3F209AD3EF000268C1 /* ReactionFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionFeedViewController.swift; sourceTree = "<group>"; };
+		4A5FFF41209AD3EF000268C1 /* ReactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionCell.swift; sourceTree = "<group>"; };
+		4A5FFF42209AD3EF000268C1 /* ReactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReactionCell.xib; sourceTree = "<group>"; };
+		4A5FFF43209AD3EF000268C1 /* ReactionFeedViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionFeedViewOutput.swift; sourceTree = "<group>"; };
+		4A5FFF45209AD3EF000268C1 /* ReactionFeedInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionFeedInteractor.swift; sourceTree = "<group>"; };
+		4A5FFF46209AD3EF000268C1 /* ReactionFeedInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionFeedInteractorOutput.swift; sourceTree = "<group>"; };
+		4A5FFF47209AD3EF000268C1 /* ReactionFeedInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionFeedInteractorInput.swift; sourceTree = "<group>"; };
+		4A5FFF49209AD3EF000268C1 /* ReactionFeedRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionFeedRouterInput.swift; sourceTree = "<group>"; };
+		4A5FFF4A209AD3EF000268C1 /* ReactionFeedRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionFeedRouter.swift; sourceTree = "<group>"; };
+		4A5FFF4D209AD3EF000268C1 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		4A5FFF4F209AD3EF000268C1 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		4A5FFF50209AD3EF000268C1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4A5FFF52209AD3EF000268C1 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		4A5FFF56209AD3EF000268C1 /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		4A5FFF57209AD3EF000268C1 /* DefaultImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultImageService.swift; sourceTree = "<group>"; };
+		4A5FFF59209AD3EF000268C1 /* DefaultAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultAuthService.swift; sourceTree = "<group>"; };
+		4A5FFF5A209AD3EF000268C1 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		4A5FFF5C209AD3EF000268C1 /* InputValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputValidationService.swift; sourceTree = "<group>"; };
+		4A5FFF5D209AD3EF000268C1 /* DefaultInputValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultInputValidationService.swift; sourceTree = "<group>"; };
+		4A5FFF5F209AD3EF000268C1 /* RealmStorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmStorable.swift; sourceTree = "<group>"; };
+		4A5FFF60209AD3EF000268C1 /* DefaultDatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultDatabaseService.swift; sourceTree = "<group>"; };
+		4A5FFF61209AD3EF000268C1 /* DatabaseToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseToken.swift; sourceTree = "<group>"; };
+		4A5FFF62209AD3EF000268C1 /* DatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		4A5FFF64209AD3EF000268C1 /* DefaultWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultWebService.swift; sourceTree = "<group>"; };
+		4A5FFF65209AD3EF000268C1 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		4A5FFF67209AD3EF000268C1 /* UserObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
+		4A5FFF68209AD3EF000268C1 /* ReactionObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionObject.swift; sourceTree = "<group>"; };
+		4A5FFF69209AD3EF000268C1 /* ReactionListObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionListObject.swift; sourceTree = "<group>"; };
+		4A8C68572097C59C0068FA82 /* ReactionsViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactionsViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A8C68F72097C6E90068FA82 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4A8C6BEE2098C5400068FA82 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/Realm.framework; sourceTree = "<group>"; };
+		4A8C6BEF2098C5400068FA82 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Frameworks/RealmSwift.framework; sourceTree = "<group>"; };
+		4AEE883B209AD74E00F66DBB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AEE883E209B0D6D00F66DBB /* ReactionGridRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionGridRouterInput.swift; sourceTree = "<group>"; };
+		4AEE8840209B0D9300F66DBB /* ReactionGridRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionGridRouter.swift; sourceTree = "<group>"; };
+		6DE08627490278AADA5A3BFC /* Pods-ReactionsViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactionsViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactionsViewer/Pods-ReactionsViewer.release.xcconfig"; sourceTree = "<group>"; };
+		8A633E95B48CD68547A3E500 /* Pods-Reactions Viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reactions Viewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reactions Viewer/Pods-Reactions Viewer.debug.xcconfig"; sourceTree = "<group>"; };
+		90E6E1C75F8998D64AF28F45 /* Pods-Reactions Viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reactions Viewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reactions Viewer/Pods-Reactions Viewer.release.xcconfig"; sourceTree = "<group>"; };
+		975EFF72503B754D5966E3C1 /* Pods-VIPER-REALM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-REALM.release.xcconfig"; path = "Pods/Target Support Files/Pods-VIPER-REALM/Pods-VIPER-REALM.release.xcconfig"; sourceTree = "<group>"; };
+		CA7332444C0FF2B03F4B0874 /* Pods_ReactionsViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactionsViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0F243D0D18DC398186B596C /* Pods-ReactionsViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactionsViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactionsViewer/Pods-ReactionsViewer.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A8C68542097C59C0068FA82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A8C6BF02098C5400068FA82 /* Realm.framework in Frameworks */,
+				4A8C6BF12098C5400068FA82 /* RealmSwift.framework in Frameworks */,
+				931D6FF931666D1FF324C1F7 /* Pods_ReactionsViewer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A5FFE5F2099EF69000268C1 /* Reactoo API Codegen */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFE602099EF69000268C1 /* APIHelper.swift */,
+				4A5FFE612099EF69000268C1 /* AlamofireImplementations.swift */,
+				4A5FFE622099EF69000268C1 /* APIs */,
+				4A5FFE692099EF69000268C1 /* CodableHelper.swift */,
+				4A5FFE6A2099EF69000268C1 /* JSONEncodableEncoding.swift */,
+				4A5FFE6B2099EF69000268C1 /* APIs.swift */,
+				4A5FFE6C2099EF69000268C1 /* Models */,
+				4A5FFE9E2099EF69000268C1 /* Extensions.swift */,
+				4A5FFE9F2099EF69000268C1 /* JSONEncodingHelper.swift */,
+				4A5FFEA02099EF69000268C1 /* Models.swift */,
+				4A5FFEA12099EF69000268C1 /* Configuration.swift */,
+			);
+			name = "Reactoo API Codegen";
+			path = "Client/SwaggerClient/Classes/Reactoo API Codegen";
+			sourceTree = "<group>";
+		};
+		4A5FFE622099EF69000268C1 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFE632099EF69000268C1 /* UserAPI.swift */,
+				4A5FFE642099EF69000268C1 /* VideoAPI.swift */,
+				4A5FFE652099EF69000268C1 /* AuthAPI.swift */,
+				4A5FFE662099EF69000268C1 /* SystemAPI.swift */,
+				4A5FFE672099EF69000268C1 /* CorsAPI.swift */,
+				4A5FFE682099EF69000268C1 /* ReactionAPI.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		4A5FFE6C2099EF69000268C1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFE6D2099EF69000268C1 /* RequestReactionLikeListType.swift */,
+				4A5FFE6E2099EF69000268C1 /* RequestAuthConfirmSignUp.swift */,
+				4A5FFE6F2099EF69000268C1 /* Id.swift */,
+				4A5FFE702099EF69000268C1 /* ReactionList.swift */,
+				4A5FFE712099EF69000268C1 /* TimelineEvent.swift */,
+				4A5FFE722099EF69000268C1 /* RequestAuthConfirmForgotPassword.swift */,
+				4A5FFE732099EF69000268C1 /* IdReadOnly.swift */,
+				4A5FFE742099EF69000268C1 /* InstagramId.swift */,
+				4A5FFE752099EF69000268C1 /* FulltextPhrase.swift */,
+				4A5FFE762099EF69000268C1 /* Hashtag.swift */,
+				4A5FFE772099EF69000268C1 /* RequestListStartKey.swift */,
+				4A5FFE782099EF69000268C1 /* RequestListSize.swift */,
+				4A5FFE792099EF69000268C1 /* RequestAuthForgotPassword.swift */,
+				4A5FFE7A2099EF69000268C1 /* RequestAuthResendConfirmationCode.swift */,
+				4A5FFE7B2099EF69000268C1 /* ReactionCommentList.swift */,
+				4A5FFE7C2099EF69000268C1 /* RequestAuthSignUp.swift */,
+				4A5FFE7D2099EF69000268C1 /* RequestAuthSignIn.swift */,
+				4A5FFE7E2099EF69000268C1 /* RequestReactionListSort.swift */,
+				4A5FFE7F2099EF69000268C1 /* User.swift */,
+				4A5FFE802099EF69000268C1 /* ResponseEmpty.swift */,
+				4A5FFE812099EF69000268C1 /* ReactionLikeList.swift */,
+				4A5FFE822099EF69000268C1 /* RequestReactionCommentListType.swift */,
+				4A5FFE842099EF69000268C1 /* Reaction.swift */,
+				4A5FFE852099EF69000268C1 /* FacebookId.swift */,
+				4A5FFE872099EF69000268C1 /* UserId.swift */,
+				4A5FFE882099EF69000268C1 /* RequestUserListType.swift */,
+				4A5FFE892099EF69000268C1 /* UserMe.swift */,
+				4A5FFE8A2099EF69000268C1 /* UserIdReadOnly.swift */,
+				4A5FFE8B2099EF69000268C1 /* RequestVideoListType.swift */,
+				4A5FFE8C2099EF69000268C1 /* MediaFile.swift */,
+				4A5FFE8D2099EF69000268C1 /* RequestReactionListType.swift */,
+				4A5FFE8E2099EF69000268C1 /* ResponseInitiateUpload.swift */,
+				4A5FFE8F2099EF69000268C1 /* ReactionLikesCounts.swift */,
+				4A5FFE902099EF69000268C1 /* MongoObjectId.swift */,
+				4A5FFE912099EF69000268C1 /* UserIdsStringList.swift */,
+				4A5FFE922099EF69000268C1 /* ReactionLike.swift */,
+				4A5FFE932099EF69000268C1 /* RequestPublishAvatar.swift */,
+				4A5FFE942099EF69000268C1 /* Video.swift */,
+				4A5FFE952099EF69000268C1 /* UserList.swift */,
+				4A5FFE962099EF69000268C1 /* ReactionComment.swift */,
+				4A5FFE972099EF69000268C1 /* RequestQueryBoolean.swift */,
+				4A5FFE982099EF69000268C1 /* RequestAuthChangePassword.swift */,
+				4A5FFE992099EF69000268C1 /* ResponseAuthSignIn.swift */,
+				4A5FFE9A2099EF69000268C1 /* RequestAuthRefreshToken.swift */,
+				4A5FFE9B2099EF69000268C1 /* ResponseAuthSignUp.swift */,
+				4A5FFE9C2099EF69000268C1 /* VideoList.swift */,
+				4A5FFE9D2099EF69000268C1 /* YoutubeId.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4A5FFF16209AD3EF000268C1 /* Reactions Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF1E209AD3EF000268C1 /* App */,
+				4A5FFF23209AD3EF000268C1 /* Modules */,
+				4A5FFF54209AD3EF000268C1 /* Services */,
+				4A5FFF66209AD3EF000268C1 /* Database Models */,
+				4A5FFF17209AD3EF000268C1 /* Misc */,
+				4A5FFF22209AD3EF000268C1 /* Assets.xcassets */,
+				4AEE883B209AD74E00F66DBB /* Info.plist */,
+			);
+			path = "Reactions Viewer";
+			sourceTree = "<group>";
+		};
+		4A5FFF17209AD3EF000268C1 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF18209AD3EF000268C1 /* NibRepresentable.swift */,
+				4A5FFF19209AD3EF000268C1 /* TabBarController.xib */,
+				4A5FFF1A209AD3EF000268C1 /* LaunchScreen.storyboard */,
+				4A5FFF1C209AD3EF000268C1 /* Collection+shaffle.swift */,
+				4A5FFF1D209AD3EF000268C1 /* TabBarController.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		4A5FFF1E209AD3EF000268C1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF1F209AD3EF000268C1 /* AppDelegate.swift */,
+				4A5FFF20209AD3EF000268C1 /* ModuleBuilder.swift */,
+				4A5FFF21209AD3EF000268C1 /* Navigator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4A5FFF23209AD3EF000268C1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF4B209AD3EF000268C1 /* Login */,
+				4A5FFF36209AD3EF000268C1 /* Reaction Feed */,
+				4A5FFF24209AD3EF000268C1 /* Reaction Grid */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4A5FFF24209AD3EF000268C1 /* Reaction Grid */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF29209AD3EF000268C1 /* View */,
+				4A5FFF32209AD3EF000268C1 /* Interactor */,
+				4A5FFF27209AD3EF000268C1 /* Presenter */,
+				4A5FFF25209AD3EF000268C1 /* Entity */,
+				4AEE883D209B0D2500F66DBB /* Router */,
+			);
+			path = "Reaction Grid";
+			sourceTree = "<group>";
+		};
+		4A5FFF25209AD3EF000268C1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF26209AD3EF000268C1 /* ReactionGridViewModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		4A5FFF27209AD3EF000268C1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF28209AD3EF000268C1 /* ReactionGridPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4A5FFF29209AD3EF000268C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF2A209AD3EF000268C1 /* ReactionGridViewOutput.swift */,
+				4A5FFF2B209AD3EF000268C1 /* Collection Cells */,
+				4A5FFF2E209AD3EF000268C1 /* ReactionGridViewInput.swift */,
+				4A5FFF2F209AD3EF000268C1 /* View Controllers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4A5FFF2B209AD3EF000268C1 /* Collection Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF2C209AD3EF000268C1 /* ReactionGridCell.swift */,
+				4A5FFF2D209AD3EF000268C1 /* ReactionGridCell.xib */,
+			);
+			path = "Collection Cells";
+			sourceTree = "<group>";
+		};
+		4A5FFF2F209AD3EF000268C1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF30209AD3EF000268C1 /* ReactionGridViewController.swift */,
+				4A5FFF31209AD3EF000268C1 /* ReactionGridViewController.xib */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4A5FFF32209AD3EF000268C1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF33209AD3EF000268C1 /* ReactionGridInteractorOutput.swift */,
+				4A5FFF34209AD3EF000268C1 /* ReactionGridInteractor.swift */,
+				4A5FFF35209AD3EF000268C1 /* ReactionGridInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4A5FFF36209AD3EF000268C1 /* Reaction Feed */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF3B209AD3EF000268C1 /* View */,
+				4A5FFF44209AD3EF000268C1 /* Interactor */,
+				4A5FFF39209AD3EF000268C1 /* Presenter */,
+				4A5FFF37209AD3EF000268C1 /* Entity */,
+				4A5FFF48209AD3EF000268C1 /* Router */,
+			);
+			path = "Reaction Feed";
+			sourceTree = "<group>";
+		};
+		4A5FFF37209AD3EF000268C1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF38209AD3EF000268C1 /* ReactionFeedViewModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		4A5FFF39209AD3EF000268C1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF3A209AD3EF000268C1 /* ReactionFeedPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4A5FFF3B209AD3EF000268C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF3C209AD3EF000268C1 /* ReactionFeedViewInput.swift */,
+				4A5FFF3D209AD3EF000268C1 /* View Controllers */,
+				4A5FFF40209AD3EF000268C1 /* Table View Cells */,
+				4A5FFF43209AD3EF000268C1 /* ReactionFeedViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4A5FFF3D209AD3EF000268C1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF3E209AD3EF000268C1 /* ReactionFeedViewController.xib */,
+				4A5FFF3F209AD3EF000268C1 /* ReactionFeedViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4A5FFF40209AD3EF000268C1 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF41209AD3EF000268C1 /* ReactionCell.swift */,
+				4A5FFF42209AD3EF000268C1 /* ReactionCell.xib */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		4A5FFF44209AD3EF000268C1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF45209AD3EF000268C1 /* ReactionFeedInteractor.swift */,
+				4A5FFF46209AD3EF000268C1 /* ReactionFeedInteractorOutput.swift */,
+				4A5FFF47209AD3EF000268C1 /* ReactionFeedInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4A5FFF48209AD3EF000268C1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF49209AD3EF000268C1 /* ReactionFeedRouterInput.swift */,
+				4A5FFF4A209AD3EF000268C1 /* ReactionFeedRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4A5FFF4B209AD3EF000268C1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF4E209AD3EF000268C1 /* View */,
+				4A5FFF51209AD3EF000268C1 /* Interactor */,
+				4A5FFF4C209AD3EF000268C1 /* Presenter */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4A5FFF4C209AD3EF000268C1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF4D209AD3EF000268C1 /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4A5FFF4E209AD3EF000268C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF4F209AD3EF000268C1 /* LoginViewController.xib */,
+				4A5FFF50209AD3EF000268C1 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4A5FFF51209AD3EF000268C1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF52209AD3EF000268C1 /* LoginInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4A5FFF54209AD3EF000268C1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF55209AD3EF000268C1 /* ImageService */,
+				4A5FFF58209AD3EF000268C1 /* AuthService */,
+				4A5FFF5B209AD3EF000268C1 /* InputValidationService */,
+				4A5FFF5E209AD3EF000268C1 /* DatabaseService */,
+				4A5FFF63209AD3EF000268C1 /* WebService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4A5FFF55209AD3EF000268C1 /* ImageService */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF56209AD3EF000268C1 /* ImageService.swift */,
+				4A5FFF57209AD3EF000268C1 /* DefaultImageService.swift */,
+			);
+			path = ImageService;
+			sourceTree = "<group>";
+		};
+		4A5FFF58209AD3EF000268C1 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF59209AD3EF000268C1 /* DefaultAuthService.swift */,
+				4A5FFF5A209AD3EF000268C1 /* AuthService.swift */,
+			);
+			path = AuthService;
+			sourceTree = "<group>";
+		};
+		4A5FFF5B209AD3EF000268C1 /* InputValidationService */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF5C209AD3EF000268C1 /* InputValidationService.swift */,
+				4A5FFF5D209AD3EF000268C1 /* DefaultInputValidationService.swift */,
+			);
+			path = InputValidationService;
+			sourceTree = "<group>";
+		};
+		4A5FFF5E209AD3EF000268C1 /* DatabaseService */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF5F209AD3EF000268C1 /* RealmStorable.swift */,
+				4A5FFF60209AD3EF000268C1 /* DefaultDatabaseService.swift */,
+				4A5FFF61209AD3EF000268C1 /* DatabaseToken.swift */,
+				4A5FFF62209AD3EF000268C1 /* DatabaseService.swift */,
+			);
+			path = DatabaseService;
+			sourceTree = "<group>";
+		};
+		4A5FFF63209AD3EF000268C1 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF64209AD3EF000268C1 /* DefaultWebService.swift */,
+				4A5FFF65209AD3EF000268C1 /* WebService.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		4A5FFF66209AD3EF000268C1 /* Database Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FFF67209AD3EF000268C1 /* UserObject.swift */,
+				4A5FFF68209AD3EF000268C1 /* ReactionObject.swift */,
+				4A5FFF69209AD3EF000268C1 /* ReactionListObject.swift */,
+			);
+			path = "Database Models";
+			sourceTree = "<group>";
+		};
+		4A8C684E2097C59C0068FA82 = {
+			isa = PBXGroup;
+			children = (
+				4A5FFE5F2099EF69000268C1 /* Reactoo API Codegen */,
+				4A5FFF16209AD3EF000268C1 /* Reactions Viewer */,
+				4A8C68582097C59C0068FA82 /* Products */,
+				4A8C68F72097C6E90068FA82 /* Podfile */,
+				DC803F4999A7892DC5DB8800 /* Pods */,
+				71834E65B2C41DFDDCA3F77A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4A8C68582097C59C0068FA82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A8C68572097C59C0068FA82 /* ReactionsViewer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AEE883D209B0D2500F66DBB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4AEE883E209B0D6D00F66DBB /* ReactionGridRouterInput.swift */,
+				4AEE8840209B0D9300F66DBB /* ReactionGridRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		71834E65B2C41DFDDCA3F77A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A8C6BEE2098C5400068FA82 /* Realm.framework */,
+				4A8C6BEF2098C5400068FA82 /* RealmSwift.framework */,
+				CA7332444C0FF2B03F4B0874 /* Pods_ReactionsViewer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC803F4999A7892DC5DB8800 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E04B1A56A67210448D8467B /* Pods-VIPER-REALM.debug.xcconfig */,
+				975EFF72503B754D5966E3C1 /* Pods-VIPER-REALM.release.xcconfig */,
+				8A633E95B48CD68547A3E500 /* Pods-Reactions Viewer.debug.xcconfig */,
+				90E6E1C75F8998D64AF28F45 /* Pods-Reactions Viewer.release.xcconfig */,
+				E0F243D0D18DC398186B596C /* Pods-ReactionsViewer.debug.xcconfig */,
+				6DE08627490278AADA5A3BFC /* Pods-ReactionsViewer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A8C68562097C59C0068FA82 /* ReactionsViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A8C68692097C59F0068FA82 /* Build configuration list for PBXNativeTarget "ReactionsViewer" */;
+			buildPhases = (
+				E34134F6246B4D68FFB6842C /* [CP] Check Pods Manifest.lock */,
+				4A8C68532097C59C0068FA82 /* Sources */,
+				4A8C68542097C59C0068FA82 /* Frameworks */,
+				4A8C68552097C59C0068FA82 /* Resources */,
+				A8B164B4060BF8749C2A95FF /* [CP] Embed Pods Frameworks */,
+				4A8C6BF52098C5C90068FA82 /* CopyFiles */,
+				4A8C6BF22098C57B0068FA82 /* Realm */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReactionsViewer;
+			productName = "VIPER-REALM";
+			productReference = 4A8C68572097C59C0068FA82 /* ReactionsViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A8C684F2097C59C0068FA82 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Oleksii Ozun";
+				TargetAttributes = {
+					4A8C68562097C59C0068FA82 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = 4A8C68522097C59C0068FA82 /* Build configuration list for PBXProject "ReactionsViewer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A8C684E2097C59C0068FA82;
+			productRefGroup = 4A8C68582097C59C0068FA82 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A8C68562097C59C0068FA82 /* ReactionsViewer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A8C68552097C59C0068FA82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A5FFF6C209AD3EF000268C1 /* LaunchScreen.storyboard in Resources */,
+				4A8C68F82097C6E90068FA82 /* Podfile in Resources */,
+				4A5FFF81209AD3EF000268C1 /* ReactionFeedViewController.xib in Resources */,
+				4A5FFF77209AD3EF000268C1 /* ReactionGridCell.xib in Resources */,
+				4A5FFF72209AD3EF000268C1 /* Assets.xcassets in Resources */,
+				4A5FFF6B209AD3EF000268C1 /* TabBarController.xib in Resources */,
+				4A5FFF84209AD3EF000268C1 /* ReactionCell.xib in Resources */,
+				4A5FFF7A209AD3EF000268C1 /* ReactionGridViewController.xib in Resources */,
+				4AEE883C209AD74E00F66DBB /* Info.plist in Resources */,
+				4A5FFF8C209AD3EF000268C1 /* LoginViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A8C6BF22098C57B0068FA82 /* Realm */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Realm;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+		A8B164B4060BF8749C2A95FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ReactionsViewer/Pods-ReactionsViewer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DeepDiff/DeepDiff.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftCop/SwiftCop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeepDiff.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactionsViewer/Pods-ReactionsViewer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E34134F6246B4D68FFB6842C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReactionsViewer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A8C68532097C59C0068FA82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A5FFF6F209AD3EF000268C1 /* AppDelegate.swift in Sources */,
+				4A5FFF9E209AD3EF000268C1 /* ReactionListObject.swift in Sources */,
+				4A5FFF7C209AD3EF000268C1 /* ReactionGridInteractor.swift in Sources */,
+				4A5FFF71209AD3EF000268C1 /* Navigator.swift in Sources */,
+				4A5FFED82099EF69000268C1 /* RequestAuthChangePassword.swift in Sources */,
+				4A5FFF7D209AD3EF000268C1 /* ReactionGridInteractorInput.swift in Sources */,
+				4A5FFEC92099EF69000268C1 /* UserMe.swift in Sources */,
+				4A5FFF76209AD3EF000268C1 /* ReactionGridCell.swift in Sources */,
+				4A5FFEAA2099EF69000268C1 /* CodableHelper.swift in Sources */,
+				4A5FFF6D209AD3EF000268C1 /* Collection+shaffle.swift in Sources */,
+				4A5FFEC22099EF69000268C1 /* RequestReactionCommentListType.swift in Sources */,
+				4AEE8841209B0D9300F66DBB /* ReactionGridRouter.swift in Sources */,
+				4A5FFEBB2099EF69000268C1 /* ReactionCommentList.swift in Sources */,
+				4A5FFED62099EF69000268C1 /* ReactionComment.swift in Sources */,
+				4A5FFF79209AD3EF000268C1 /* ReactionGridViewController.swift in Sources */,
+				4A5FFEA22099EF69000268C1 /* APIHelper.swift in Sources */,
+				4A5FFEBF2099EF69000268C1 /* User.swift in Sources */,
+				4A5FFF74209AD3EF000268C1 /* ReactionGridPresenter.swift in Sources */,
+				4A5FFEAD2099EF69000268C1 /* RequestReactionLikeListType.swift in Sources */,
+				4A5FFEBD2099EF69000268C1 /* RequestAuthSignIn.swift in Sources */,
+				4A5FFF8D209AD3EF000268C1 /* LoginViewController.swift in Sources */,
+				4A5FFECF2099EF69000268C1 /* ReactionLikesCounts.swift in Sources */,
+				4A5FFED42099EF69000268C1 /* Video.swift in Sources */,
+				4A5FFED52099EF69000268C1 /* UserList.swift in Sources */,
+				4A5FFF99209AD3EF000268C1 /* DatabaseService.swift in Sources */,
+				4A5FFEB92099EF69000268C1 /* RequestAuthForgotPassword.swift in Sources */,
+				4A5FFF8E209AD3EF000268C1 /* LoginInteractor.swift in Sources */,
+				4A5FFED72099EF69000268C1 /* RequestQueryBoolean.swift in Sources */,
+				4A5FFEB22099EF69000268C1 /* RequestAuthConfirmForgotPassword.swift in Sources */,
+				4A5FFF97209AD3EF000268C1 /* DefaultDatabaseService.swift in Sources */,
+				4A5FFEDB2099EF69000268C1 /* ResponseAuthSignUp.swift in Sources */,
+				4A5FFEE02099EF69000268C1 /* Models.swift in Sources */,
+				4A5FFF80209AD3EF000268C1 /* ReactionFeedViewInput.swift in Sources */,
+				4A5FFEC72099EF69000268C1 /* UserId.swift in Sources */,
+				4A5FFEC12099EF69000268C1 /* ReactionLikeList.swift in Sources */,
+				4A5FFEC02099EF69000268C1 /* ResponseEmpty.swift in Sources */,
+				4A5FFEA62099EF69000268C1 /* AuthAPI.swift in Sources */,
+				4A5FFEAE2099EF69000268C1 /* RequestAuthConfirmSignUp.swift in Sources */,
+				4A5FFECC2099EF69000268C1 /* MediaFile.swift in Sources */,
+				4A5FFF94209AD3EF000268C1 /* InputValidationService.swift in Sources */,
+				4A5FFEB12099EF69000268C1 /* TimelineEvent.swift in Sources */,
+				4A5FFEB42099EF69000268C1 /* InstagramId.swift in Sources */,
+				4A5FFF7B209AD3EF000268C1 /* ReactionGridInteractorOutput.swift in Sources */,
+				4A5FFF82209AD3EF000268C1 /* ReactionFeedViewController.swift in Sources */,
+				4A5FFF9A209AD3EF000268C1 /* DefaultWebService.swift in Sources */,
+				4A5FFEDA2099EF69000268C1 /* RequestAuthRefreshToken.swift in Sources */,
+				4A5FFF96209AD3EF000268C1 /* RealmStorable.swift in Sources */,
+				4A5FFF88209AD3EF000268C1 /* ReactionFeedInteractorInput.swift in Sources */,
+				4A5FFEB62099EF69000268C1 /* Hashtag.swift in Sources */,
+				4A5FFEB52099EF69000268C1 /* FulltextPhrase.swift in Sources */,
+				4A5FFEC42099EF69000268C1 /* Reaction.swift in Sources */,
+				4A5FFEC82099EF69000268C1 /* RequestUserListType.swift in Sources */,
+				4A5FFEDD2099EF69000268C1 /* YoutubeId.swift in Sources */,
+				4A5FFF75209AD3EF000268C1 /* ReactionGridViewOutput.swift in Sources */,
+				4A5FFF8A209AD3EF000268C1 /* ReactionFeedRouter.swift in Sources */,
+				4A5FFEBA2099EF69000268C1 /* RequestAuthResendConfirmationCode.swift in Sources */,
+				4A5FFF89209AD3EF000268C1 /* ReactionFeedRouterInput.swift in Sources */,
+				4A5FFEB02099EF69000268C1 /* ReactionList.swift in Sources */,
+				4A5FFEAF2099EF69000268C1 /* Id.swift in Sources */,
+				4A5FFECB2099EF69000268C1 /* RequestVideoListType.swift in Sources */,
+				4A5FFEBE2099EF69000268C1 /* RequestReactionListSort.swift in Sources */,
+				4A5FFF6A209AD3EF000268C1 /* NibRepresentable.swift in Sources */,
+				4A5FFEA92099EF69000268C1 /* ReactionAPI.swift in Sources */,
+				4A5FFEAC2099EF69000268C1 /* APIs.swift in Sources */,
+				4AEE883F209B0D6D00F66DBB /* ReactionGridRouterInput.swift in Sources */,
+				4A5FFECD2099EF69000268C1 /* RequestReactionListType.swift in Sources */,
+				4A5FFF9D209AD3EF000268C1 /* ReactionObject.swift in Sources */,
+				4A5FFF70209AD3EF000268C1 /* ModuleBuilder.swift in Sources */,
+				4A5FFEAB2099EF69000268C1 /* JSONEncodableEncoding.swift in Sources */,
+				4A5FFED12099EF69000268C1 /* UserIdsStringList.swift in Sources */,
+				4A5FFF98209AD3EF000268C1 /* DatabaseToken.swift in Sources */,
+				4A5FFEE12099EF69000268C1 /* Configuration.swift in Sources */,
+				4A5FFEB32099EF69000268C1 /* IdReadOnly.swift in Sources */,
+				4A5FFEBC2099EF69000268C1 /* RequestAuthSignUp.swift in Sources */,
+				4A5FFF7E209AD3EF000268C1 /* ReactionFeedViewModel.swift in Sources */,
+				4A5FFEDC2099EF69000268C1 /* VideoList.swift in Sources */,
+				4A5FFEDF2099EF69000268C1 /* JSONEncodingHelper.swift in Sources */,
+				4A5FFEC52099EF69000268C1 /* FacebookId.swift in Sources */,
+				4A5FFEA32099EF69000268C1 /* AlamofireImplementations.swift in Sources */,
+				4A5FFF85209AD3EF000268C1 /* ReactionFeedViewOutput.swift in Sources */,
+				4A5FFF7F209AD3EF000268C1 /* ReactionFeedPresenter.swift in Sources */,
+				4A5FFF92209AD3EF000268C1 /* DefaultAuthService.swift in Sources */,
+				4A5FFED02099EF69000268C1 /* MongoObjectId.swift in Sources */,
+				4A5FFF95209AD3EF000268C1 /* DefaultInputValidationService.swift in Sources */,
+				4A5FFEA42099EF69000268C1 /* UserAPI.swift in Sources */,
+				4A5FFF9C209AD3EF000268C1 /* UserObject.swift in Sources */,
+				4A5FFF6E209AD3EF000268C1 /* TabBarController.swift in Sources */,
+				4A5FFF8B209AD3EF000268C1 /* LoginPresenter.swift in Sources */,
+				4A5FFF78209AD3EF000268C1 /* ReactionGridViewInput.swift in Sources */,
+				4A5FFED32099EF69000268C1 /* RequestPublishAvatar.swift in Sources */,
+				4A5FFF90209AD3EF000268C1 /* ImageService.swift in Sources */,
+				4A5FFEDE2099EF69000268C1 /* Extensions.swift in Sources */,
+				4A5FFEB82099EF69000268C1 /* RequestListSize.swift in Sources */,
+				4A5FFF87209AD3EF000268C1 /* ReactionFeedInteractorOutput.swift in Sources */,
+				4A5FFF93209AD3EF000268C1 /* AuthService.swift in Sources */,
+				4A5FFF9B209AD3EF000268C1 /* WebService.swift in Sources */,
+				4A5FFEA52099EF69000268C1 /* VideoAPI.swift in Sources */,
+				4A5FFEB72099EF69000268C1 /* RequestListStartKey.swift in Sources */,
+				4A5FFF86209AD3EF000268C1 /* ReactionFeedInteractor.swift in Sources */,
+				4A5FFEA82099EF69000268C1 /* CorsAPI.swift in Sources */,
+				4A5FFECE2099EF69000268C1 /* ResponseInitiateUpload.swift in Sources */,
+				4A5FFF73209AD3EF000268C1 /* ReactionGridViewModel.swift in Sources */,
+				4A5FFED92099EF69000268C1 /* ResponseAuthSignIn.swift in Sources */,
+				4A5FFED22099EF69000268C1 /* ReactionLike.swift in Sources */,
+				4A5FFECA2099EF69000268C1 /* UserIdReadOnly.swift in Sources */,
+				4A5FFF83209AD3EF000268C1 /* ReactionCell.swift in Sources */,
+				4A5FFF91209AD3EF000268C1 /* DefaultImageService.swift in Sources */,
+				4A5FFEA72099EF69000268C1 /* SystemAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4A5FFF1A209AD3EF000268C1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A5FFF1B209AD3EF000268C1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A8C68672097C59F0068FA82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A8C68682097C59F0068FA82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A8C686A2097C59F0068FA82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0F243D0D18DC398186B596C /* Pods-ReactionsViewer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 94AW7TG4ZH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/$(PROJECT_NAME)/Realm",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Reactions Viewer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ozun.Reaction-Viewer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A8C686B2097C59F0068FA82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DE08627490278AADA5A3BFC /* Pods-ReactionsViewer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 94AW7TG4ZH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/$(PROJECT_NAME)/Realm",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Reactions Viewer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ozun.Reaction-Viewer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A8C68522097C59C0068FA82 /* Build configuration list for PBXProject "ReactionsViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A8C68672097C59F0068FA82 /* Debug */,
+				4A8C68682097C59F0068FA82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A8C68692097C59F0068FA82 /* Build configuration list for PBXNativeTarget "ReactionsViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A8C686A2097C59F0068FA82 /* Debug */,
+				4A8C686B2097C59F0068FA82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A8C684F2097C59C0068FA82 /* Project object */;
+}

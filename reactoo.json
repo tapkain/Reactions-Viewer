@@ -1,0 +1,6076 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "0.1",
+		"title": "Reactoo API"
+	},
+	"host": "api.reactoo.com",
+	"basePath": "/v1",
+	"schemes": [
+		"https"
+	],
+	"paths": {
+		"/": {
+			"get": {
+				"operationId": "getSwaggerHtml",
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "ANY",
+					"type": "http_proxy"
+				},
+				"description": "Swagger v2 documentation",
+				"summary": "Swagger.html",
+				"tags": [
+					"system"
+				]
+			}
+		},
+		"/auth/changePassword": {
+			"post": {
+				"tags": [
+					"auth"
+				],
+				"summary": "Change password",
+				"description": "Changes user password. Returns empty response on success.",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/plain"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "RequestAuthChangePassword",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/RequestAuthChangePassword"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"title": "ResponseEmpty",
+							"description": "Successful empty response.",
+							"type": "string",
+							"default": ""
+						}
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"404": {
+						"description": "404 response"
+					}
+				},
+				"x-amazon-apigateway-request-validator": "only-body",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "changePassword"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/auth/confirmForgotPassword": {
+			"post": {
+				"tags": [
+					"auth"
+				],
+				"summary": "Confirm forgot password",
+				"description": "Resets user password by providing one-time code and new password and returns new access tokens on success.",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "RequestAuthConfirmForgotPassword",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/RequestAuthConfirmForgotPassword"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ResponseAuthSignIn"
+						}
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"404": {
+						"description": "404 response"
+					}
+				},
+				"x-amazon-apigateway-request-validator": "only-body",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "confirmForgotPassword"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/auth/confirmSignUp": {
+			"post": {
+				"tags": [
+					"auth"
+				],
+				"summary": "User registration confirmation",
+				"description": "Confirms user registration by providing valid confirmation code and returns new access tokens on success.",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "RequestAuthConfirmSignUp",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/RequestAuthConfirmSignUp"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ResponseAuthSignIn"
+						}
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"404": {
+						"description": "404 response"
+					}
+				},
+				"x-amazon-apigateway-request-validator": "only-body",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "confirmSignUp"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/auth/forgotPassword": {
+			"post": {
+				"tags": [
+					"auth"
+				],
+				"summary": "Forgot password",
+				"description": "Sends one-time code for resetting password via medium specified on sign-up (EMAIL or SMS).",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "RequestAuthForgotPassword",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/RequestAuthForgotPassword"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ResponseAuthSignUp"
+						}
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"404": {
+						"description": "404 response"
+					}
+				},
+				"x-amazon-apigateway-request-validator": "only-body",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "forgotPassword"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/auth/refreshToken": {
+			"post": {
+				"tags": [
+					"auth"
+				],
+				"summary": "Refresh token sign-in",
+				"description": "Signs user in with refresh token flow, returns access tokens on success.",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "RequestAuthRefreshToken",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/RequestAuthRefreshToken"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ResponseAuthSignIn"
+						}
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"404": {
+						"description": "404 response"
+					}
+				},
+				"x-amazon-apigateway-request-validator": "only-body",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "refreshToken"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/auth/resendConfirmationCode": {
+			"post": {
+				"tags": [
+					"auth"
+				],
+				"summary": "Confirmation code resend",
+				"description": "Resends confirmation code via medium specified on sign-up (EMAIL or SMS).",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "RequestAuthResendConfirmationCode",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/RequestAuthResendConfirmationCode"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ResponseAuthSignUp"
+						}
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"404": {
+						"description": "404 response"
+					}
+				},
+				"x-amazon-apigateway-request-validator": "only-body",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "resendConfirmationCode"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/auth/signIn": {
+			"post": {
+				"tags": [
+					"auth"
+				],
+				"summary": "User sign-in",
+				"description": "Signs user in with basic user password flow, returns access tokens on success.",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "RequestAuthSignIn",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/RequestAuthSignIn"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ResponseAuthSignIn"
+						}
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"404": {
+						"description": "404 response"
+					}
+				},
+				"x-amazon-apigateway-request-validator": "only-body",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "signIn"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/auth/signUp": {
+			"post": {
+				"tags": [
+					"auth"
+				],
+				"summary": "User registration",
+				"description": "Creates user in assigned Cognito user pool and primary backend database, returns confirmation code delivery details.",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "RequestAuthSignUp",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/RequestAuthSignUp"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ResponseAuthSignUp"
+						}
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"404": {
+						"description": "404 response"
+					}
+				},
+				"x-amazon-apigateway-request-validator": "only-body",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "signUp"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/auth/testCredentials": {
+			"get": {
+				"tags": [
+					"auth",
+					"system"
+				],
+				"summary": "Test authentication",
+				"description": "Verifies supplied idToken",
+				"produces": [
+					"text/plain"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"title": "ResponseEmpty",
+							"description": "Successful empty response.",
+							"type": "string",
+							"default": ""
+						}
+					},
+					"400": {
+						"description": "400 response"
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "testCredentials"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/reaction": {
+			"get": {
+				"tags": [
+					"reaction"
+				],
+				"summary": "Fetch reaction by Id",
+				"description": "Fetches reaction by Id and returns Reaction model.",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "Reaction Id. Value must match Id model.",
+						"required": true,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/Reaction"
+						}
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "getReactionById"
+			},
+			"put": {
+				"tags": [
+					"reaction"
+				],
+				"summary": "Update reaction",
+				"description": "Updates reaction.",
+				"consumes": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "Reaction Id. Value must match Id model.",
+						"required": true,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					},
+					{
+						"in": "body",
+						"name": "Reaction",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Reaction"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response"
+					},
+					"204": {
+						"description": "204 response"
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"401": {
+						"description": "401 response"
+					},
+					"404": {
+						"description": "404 response"
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-body",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "updateReaction"
+			},
+			"delete": {
+				"tags": [
+					"reaction"
+				],
+				"summary": "Delete reaction",
+				"description": "Deletes reaction.",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "Video Id. Value must match Id model.",
+						"required": true,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "204 response"
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"401": {
+						"description": "401 response"
+					},
+					"404": {
+						"description": "404 response"
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-body",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "deleteReaction"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,DELETE,PUT,GET'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/reaction/comment": {
+			"get": {
+				"tags": [
+					"reaction"
+				],
+				"summary": "Fetch reaction comment by Id",
+				"description": "Fetches reaction comment by Id and returns ReactionComment model.",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "Reaction Comment Id. Value must match Id model.",
+						"required": true,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ReactionComment"
+						}
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "getReactionCommentById"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/reaction/comment/list": {
+			"get": {
+				"tags": [
+					"reaction"
+				],
+				"summary": "Fetch multiple reaction comments",
+				"description": "Fetches list of reaction comments and returns ReactionCommentList model containing zero or more ReactionComment models.",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "reactionId",
+						"in": "query",
+						"description": "Reaction Id. Value must match ReactionId model.",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "includeUserModels",
+						"in": "query",
+						"description": "Includes users models of users contained in 'items' attribute as 'users' attribute",
+						"required": false,
+						"type": "string",
+						"format": "boolean",
+						"enum": [
+							"true",
+							"false",
+							"0",
+							"1",
+							""
+						],
+						"default": ""
+					},
+					{
+						"name": "startKey",
+						"in": "query",
+						"description": "Reaction comment list start key. Value must match RequestListStartKey model.",
+						"required": false,
+						"type": "string",
+						"pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"description": "Reaction comment list type. Value must match RequestReactionCommentListType model.",
+						"required": true,
+						"type": "string",
+						"enum": [
+							"reaction"
+						]
+					},
+					{
+						"name": "size",
+						"in": "query",
+						"description": "Reaction comment list size. Value must match RequestListSize model.",
+						"required": false,
+						"type": "integer",
+						"format": "int32",
+						"minimum": 0,
+						"maximum": 100,
+						"default": 20
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ReactionCommentList"
+						}
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "getReactionComments"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/reaction/initiateUpload": {
+			"post": {
+				"tags": [
+					"reaction"
+				],
+				"summary": "Initiate reaction upload",
+				"description": "Initiates reaction upload and returns AWS signed URL to S3 or CloudFront services to upload an actual reaction file, preferably using AWS S3 uploader.",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "Id. Value must match Id model.",
+						"required": true,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ResponseInitiateUpload"
+						}
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"500": {
+						"description": "500 response"
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "initiateReactionUpload"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/reaction/like": {
+			"get": {
+				"tags": [
+					"reaction"
+				],
+				"summary": "Fetch reaction like by Id",
+				"description": "Fetches reaction like by Id and returns ReactionLike model.",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "Reaction Like Id. Value must match MongoObjectId model.",
+						"required": true,
+						"type": "string",
+						"pattern": "^[a-f\\d]{24}$"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ReactionLike"
+						}
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "getReactionLikeById"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/reaction/like/list": {
+			"get": {
+				"tags": [
+					"reaction"
+				],
+				"summary": "Fetch multiple reaction likes",
+				"description": "Fetches list of reaction likes and returns ReactionCommentList model containing zero or more ReactionComment models.",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "reactionId",
+						"in": "query",
+						"description": "Reaction Id. Value must match ReactionId model.",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "includeUserModels",
+						"in": "query",
+						"description": "Includes users models of users contained in 'items' attribute as 'users' attribute",
+						"required": false,
+						"type": "string",
+						"format": "boolean",
+						"enum": [
+							"true",
+							"false",
+							"0",
+							"1",
+							""
+						],
+						"default": ""
+					},
+					{
+						"name": "startKey",
+						"in": "query",
+						"description": "Reaction like list start key. Value must match RequestListStartKey model.",
+						"required": false,
+						"type": "string",
+						"pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"description": "Reaction like list type. Value must match RequestReactionCommentListType model.",
+						"required": true,
+						"type": "string",
+						"enum": [
+							"reaction"
+						]
+					},
+					{
+						"name": "size",
+						"in": "query",
+						"description": "Reaction like list size. Value must match RequestListSize model.",
+						"required": false,
+						"type": "integer",
+						"format": "int32",
+						"minimum": 0,
+						"maximum": 100,
+						"default": 20
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ReactionLikeList"
+						}
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "getReactionLikes"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/reaction/list": {
+			"get": {
+				"tags": [
+					"reaction"
+				],
+				"summary": "Fetch multiple reactions",
+				"description": "Fetches list of reactions and returns ReactionList model containing zero or more Reactions models.",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "excludeReactionId",
+						"in": "query",
+						"description": "Exclude specific reaction. Value must match Id model.",
+						"required": false,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					},
+					{
+						"name": "userId",
+						"in": "query",
+						"description": "Show reactions posted by specific user. Value must match UserId model.",
+						"required": false,
+						"type": "string",
+						"format": "region_uuid",
+						"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					},
+					{
+						"name": "sort",
+						"in": "query",
+						"description": "Sorting method. Value must match RequestReactionListSort model.",
+						"required": false,
+						"type": "string",
+						"enum": [
+							"popular",
+							"followings",
+							"latest"
+						],
+						"default": "latest"
+					},
+					{
+						"name": "videoId",
+						"in": "query",
+						"description": "Show reactions to specific video. Value must match Id model.",
+						"required": false,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					},
+					{
+						"name": "startKey",
+						"in": "query",
+						"description": "Reaction list start key. Value must match RequestListStartKey model.",
+						"required": false,
+						"type": "string",
+						"pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"description": "Reaction list type. Value must match RequestReactionListType model.",
+						"required": true,
+						"type": "string",
+						"enum": [
+							"hot",
+							"following",
+							"video",
+							"hashtag",
+							"user"
+						]
+					},
+					{
+						"name": "hashtag",
+						"in": "query",
+						"description": "Fetch reactions containing specific hashtag. Value must match Hashtag model.",
+						"required": false,
+						"type": "string",
+						"pattern": "^([a-zA-Z\\d]{2,})$",
+						"minLength": 2
+					},
+					{
+						"name": "includeUserModels",
+						"in": "query",
+						"description": "Includes users models of users contained in 'items' attribute as 'users' attribute",
+						"required": false,
+						"type": "string",
+						"format": "boolean",
+						"enum": [
+							"true",
+							"false",
+							"0",
+							"1",
+							""
+						],
+						"default": ""
+					},
+					{
+						"name": "size",
+						"in": "query",
+						"description": "Reaction list size. Value must match RequestListSize model.",
+						"required": false,
+						"type": "integer",
+						"format": "int32",
+						"minimum": 0,
+						"maximum": 100,
+						"default": 20
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ReactionList"
+						}
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "getReactions"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/swagger.json": {
+			"get": {
+				"operationId": "getSwaggerJson",
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "ANY",
+					"type": "http_proxy"
+				},
+				"description": "Swagger v2 JSON definition file",
+				"summary": "Swagger.json",
+				"tags": [
+					"system"
+				]
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/plain",
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"title": "ResponseEmpty",
+							"description": "Successful empty response.",
+							"type": "string",
+							"default": ""
+						},
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'true'",
+								"method.response.header.Access-Control-Allow-Methods": "'GET,POST,OPTIONS'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{\"statusCode\": 200}"
+					},
+					"passthroughBehavior": "never",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/swagger.yml": {
+			"get": {
+				"operationId": "getSwaggerYaml",
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "ANY",
+					"type": "http_proxy"
+				},
+				"description": "Swagger v2 YAML definition file",
+				"summary": "Swagger.yml",
+				"tags": [
+					"system"
+				]
+			},
+			"options": {
+				"consumes": [
+					"application/x-yaml"
+				],
+				"produces": [
+					"text/plain",
+					"application/x-yaml"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"title": "ResponseEmpty",
+							"description": "Successful empty response.",
+							"type": "string",
+							"default": ""
+						},
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'true'",
+								"method.response.header.Access-Control-Allow-Methods": "'GET,POST,OPTIONS'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/x-yaml": "{\"statusCode\": 200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/user": {
+			"get": {
+				"tags": [
+					"user"
+				],
+				"summary": "Fetch user by Id",
+				"description": "Fetches user by Id and returns User model.",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "User Id. Value must match UserId model.",
+						"required": true,
+						"type": "string",
+						"format": "region_uuid",
+						"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/User"
+						}
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "getUserById"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/user/list": {
+			"get": {
+				"tags": [
+					"user"
+				],
+				"summary": "Fetch multiple users",
+				"description": "Fetches list of users and returns UserList model containing zero or more User models.",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "userId",
+						"in": "query",
+						"description": "User Id. Value must match UserId model.",
+						"required": false,
+						"type": "string",
+						"format": "region_uuid",
+						"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					},
+					{
+						"name": "ids",
+						"in": "query",
+						"description": "Comma-separated list of User Ids.",
+						"required": false,
+						"type": "string",
+						"format": "UserId",
+						"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12},?){1,20}$"
+					},
+					{
+						"name": "startKey",
+						"in": "query",
+						"description": "User list start key. Value must match RequestListStartKey model.",
+						"required": false,
+						"type": "string",
+						"pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"description": "User list type. Value must match RequestUserListType model.",
+						"required": true,
+						"type": "string",
+						"enum": [
+							"leaderboard",
+							"leaderboard-weekly",
+							"recent-reactors",
+							"followings",
+							"followers",
+							"blocking",
+							"pending-followers",
+							"promoted",
+							"ids"
+						]
+					},
+					{
+						"name": "size",
+						"in": "query",
+						"description": "User list size. Value must match RequestListSize model.",
+						"required": false,
+						"type": "integer",
+						"format": "int32",
+						"minimum": 0,
+						"maximum": 100,
+						"default": 20
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/UserList"
+						}
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "getUsers"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/user/me": {
+			"get": {
+				"tags": [
+					"user"
+				],
+				"summary": "Fetch current user",
+				"description": "Fetches caller of this method as user model.",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/UserMe"
+						}
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "getUserMyself"
+			},
+			"put": {
+				"tags": [
+					"user"
+				],
+				"summary": "Updates current user",
+				"description": "Updates current user.",
+				"consumes": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "UserMe",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/UserMe"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response"
+					},
+					"204": {
+						"description": "204 response"
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"401": {
+						"description": "401 response"
+					},
+					"404": {
+						"description": "404 response"
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-body",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "updateMyself"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,PUT,GET'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/user/me/avatar/initiateUpload": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Initiate avatar upload of current user",
+				"description": "Initiates avatar upload of current user and returns AWS signed URL to S3 or CloudFront services to upload an actual thumbnail file, preferably using AWS S3 uploader.",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "Id. Value must match Id model.",
+						"required": true,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ResponseInitiateUpload"
+						}
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"500": {
+						"description": "500 response"
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "initiateMyAvatarUpload"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/user/me/avatar/publish": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Publish avatar of current user",
+				"description": "Publishes and propagates newly uploaded avatar of currently logged in user. Call this endpoint after successful avatar upload to AWS signed URL obtained from initiateMyAvatarUpload operation.",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "Id. Value must match Id model.",
+						"required": true,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response"
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"500": {
+						"description": "500 response"
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "publishMyAvatar"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/video": {
+			"get": {
+				"tags": [
+					"video"
+				],
+				"summary": "Fetch video by Id",
+				"description": "Fetches video by Id and returns Video model.",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "Video Id. Value must match Id model.",
+						"required": true,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/Video"
+						}
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "getVideoById"
+			},
+			"post": {
+				"tags": [
+					"video"
+				],
+				"summary": "Create/update video",
+				"description": "Creates and publishes a video if it doesn't exist yet or updates existing one. Call this endpoint after successful upload.",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "facebookId",
+						"in": "query",
+						"description": "Facebook ID if video was originally fetched from Facebook.",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "instagramId",
+						"in": "query",
+						"description": "Instagram ID if video was originally fetched from Instagram.",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "youtubeId",
+						"in": "query",
+						"description": "Youtube ID if video was originally fetched from Youtube.",
+						"required": false,
+						"type": "string",
+						"pattern": "^[\\w-]{11}$"
+					},
+					{
+						"in": "body",
+						"name": "Video",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Video"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/Video"
+						}
+					},
+					"204": {
+						"description": "204 response"
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"401": {
+						"description": "401 response"
+					},
+					"404": {
+						"description": "404 response"
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-body",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "publishVideo"
+			},
+			"put": {
+				"tags": [
+					"video"
+				],
+				"summary": "Update video",
+				"description": "Updates video.",
+				"consumes": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "Video Id. Value must match Id model.",
+						"required": true,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					},
+					{
+						"in": "body",
+						"name": "Video",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Video"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response"
+					},
+					"204": {
+						"description": "204 response"
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"401": {
+						"description": "401 response"
+					},
+					"404": {
+						"description": "404 response"
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-body",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "updateVideo"
+			},
+			"delete": {
+				"tags": [
+					"video"
+				],
+				"summary": "Delete video",
+				"description": "Deletes video.",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "Video Id. Value must match Id model.",
+						"required": true,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "204 response"
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"401": {
+						"description": "401 response"
+					},
+					"404": {
+						"description": "404 response"
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-body",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "deleteVideo"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,DELETE,POST,PUT,GET'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/video/initiateUpload": {
+			"post": {
+				"tags": [
+					"video"
+				],
+				"summary": "Initiate video upload",
+				"description": "Initiates video upload and returns AWS signed URL to S3 or CloudFront services to upload an actual video file, preferably using AWS S3 uploader.",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "Id. Value must match Id model.",
+						"required": true,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ResponseInitiateUpload"
+						}
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"500": {
+						"description": "500 response"
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "initiateVideoUpload"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/video/initiateUploadPublic": {
+			"post": {
+				"tags": [
+					"video"
+				],
+				"summary": "Initiate public video upload",
+				"description": "Initiates public video upload and returns AWS signed URL to S3 or CloudFront services to upload an actual video file, preferably using AWS S3 uploader. Method does not require authorisation.",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "campaignId",
+						"in": "query",
+						"description": "Campaign Id. Value must match UserId model.",
+						"required": true,
+						"type": "string",
+						"format": "region_uuid",
+						"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/ResponseInitiateUpload"
+						}
+					},
+					"400": {
+						"description": "400 response"
+					},
+					"500": {
+						"description": "500 response"
+					}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "initiateVideoUploadPublic"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		},
+		"/video/list": {
+			"get": {
+				"tags": [
+					"video"
+				],
+				"summary": "Fetch multiple videos",
+				"description": "Fetches list of videos and returns VideoList model containing zero or more Video models.",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "userId",
+						"in": "query",
+						"description": "Show videos of specific user. Value must match UserId model.",
+						"required": false,
+						"type": "string",
+						"format": "region_uuid",
+						"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					},
+					{
+						"name": "fulltextPhrase",
+						"in": "query",
+						"description": "Show videos matching fulltext phrase. Value must match FulltextPhrase model.",
+						"required": false,
+						"type": "string",
+						"minLength": 1
+					},
+					{
+						"name": "videoId",
+						"in": "query",
+						"description": "Fetch similar videos to this specific video. Value must match Id model.",
+						"required": false,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					},
+					{
+						"name": "startKey",
+						"in": "query",
+						"description": "Video list start key. Value must match RequestListStartKey model.",
+						"required": false,
+						"type": "string",
+						"pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"description": "Video list type. Value must match RequestVideoListType model.",
+						"required": true,
+						"type": "string",
+						"enum": [
+							"following",
+							"personalised",
+							"trending",
+							"featured",
+							"latest",
+							"hashtag",
+							"related",
+							"user",
+							"youtube",
+							"facebook",
+							"instagram"
+						]
+					},
+					{
+						"name": "withPublicReactions",
+						"in": "query",
+						"description": "Fetch videos with at least one public reaction. Value must match RequestQueryBoolean model.",
+						"required": false,
+						"type": "string",
+						"format": "boolean",
+						"enum": [
+							"true",
+							"false",
+							"0",
+							"1",
+							""
+						],
+						"default": ""
+					},
+					{
+						"name": "excludeUserId",
+						"in": "query",
+						"description": "Exclude videos posted by specific user from the resultset. Value must match UserId model.",
+						"required": false,
+						"type": "string",
+						"format": "region_uuid",
+						"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					},
+					{
+						"name": "hashtag",
+						"in": "query",
+						"description": "Fetch videos containing specific hashtag. Value must match Hashtag model.",
+						"required": false,
+						"type": "string",
+						"pattern": "^([a-zA-Z\\d]{2,})$",
+						"minLength": 2
+					},
+					{
+						"name": "includeUserModels",
+						"in": "query",
+						"description": "Includes users models of users contained in 'items' attribute as 'users' attribute",
+						"required": false,
+						"type": "string",
+						"format": "boolean",
+						"enum": [
+							"true",
+							"false",
+							"0",
+							"1",
+							""
+						],
+						"default": ""
+					},
+					{
+						"name": "excludeVideoId",
+						"in": "query",
+						"description": "Exclude specific video from resultset. Value must match Id model.",
+						"required": false,
+						"type": "string",
+						"format": "uuid",
+						"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+					},
+					{
+						"name": "size",
+						"in": "query",
+						"description": "Video list size. Value must match RequestListSize model.",
+						"required": false,
+						"type": "integer",
+						"format": "int32",
+						"minimum": 0,
+						"maximum": 100,
+						"default": 20
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/VideoList"
+						}
+					}
+				},
+				"security": [
+					{
+						"cognito-g1": []
+					}
+				],
+				"x-amazon-apigateway-request-validator": "only-params",
+				"x-amazon-apigateway-integration": {
+					"uri": null,
+					"passthroughBehavior": "when_no_match",
+					"httpMethod": "POST",
+					"type": "aws_proxy"
+				},
+				"operationId": "getVideos"
+			},
+			"options": {
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"headers": {
+							"Access-Control-Allow-Origin": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Methods": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Credentials": {
+								"type": "string"
+							},
+							"Access-Control-Allow-Headers": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"x-amazon-apigateway-integration": {
+					"responses": {
+						"default": {
+							"statusCode": "200",
+							"responseParameters": {
+								"method.response.header.Access-Control-Allow-Credentials": "'false'",
+								"method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
+								"method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+								"method.response.header.Access-Control-Allow-Origin": "'*'"
+							}
+						}
+					},
+					"requestTemplates": {
+						"application/json": "{statusCode:200}"
+					},
+					"passthroughBehavior": "when_no_match",
+					"type": "mock",
+					"uri": null
+				},
+				"tags": [
+					"cors"
+				]
+			}
+		}
+	},
+	"securityDefinitions": {
+		"api_key": {
+			"type": "apiKey",
+			"name": "x-api-key",
+			"in": "header"
+		},
+		"cognito-g1": {
+			"type": "apiKey",
+			"name": "Authorization",
+			"in": "header",
+			"x-amazon-apigateway-authtype": "cognito_user_pools",
+			"x-amazon-apigateway-authorizer": {
+				"providerARNs": [
+					"arn:aws:cognito-idp:eu-west-1:458780930208:userpool/eu-west-1_H5TdENcrU"
+				],
+				"type": "cognito_user_pools"
+			}
+		}
+	},
+	"definitions": {
+		"FacebookId": {
+			"title": "FacebookId",
+			"description": "Facebook ID",
+			"type": "string",
+			"pattern": "^[\\d]{7,20}$"
+		},
+		"FulltextPhrase": {
+			"type": "string",
+			"minLength": 1
+		},
+		"Hashtag": {
+			"type": "string",
+			"pattern": "^([a-zA-Z\\d]{2,})$",
+			"minLength": 2
+		},
+		"Id": {
+			"type": "string",
+			"format": "uuid",
+			"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+		},
+		"IdReadOnly": {
+			"title": "IdReadOnly",
+			"description": "Standardised Id attribute matching 'uuid' regex pattern. Can not be updated.",
+			"type": "string",
+			"format": "uuid",
+			"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$",
+			"readOnly": true
+		},
+		"InstagramId": {
+			"title": "InstagramId",
+			"description": "Instagram ID",
+			"type": "string",
+			"pattern": "^[\\w-]{11}$"
+		},
+		"List": {
+			"title": "List",
+			"description": "iterable collection of models",
+			"type": "object",
+			"properties": {
+				"size": {
+					"type": "integer",
+					"format": "int32",
+					"minimum": 0,
+					"maximum": 100,
+					"default": 20
+				},
+				"startKey": {
+					"type": "string",
+					"pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$"
+				}
+			},
+			"required": [
+				"size",
+				"startKey"
+			]
+		},
+		"MediaFile": {
+			"title": "MediaFile",
+			"description": "MediaFile",
+			"type": "object",
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": [
+						"full",
+						"preview",
+						"micro"
+					],
+					"default": "full"
+				},
+				"mimeType": {
+					"type": "string",
+					"pattern": "^((application)|(image)|(video)|(audio))/[\\w\\.\\+\\-]+$",
+					"maxLength": 128
+				},
+				"qualityType": {
+					"type": "string",
+					"pattern": "^((adaptive)|([+-]?\\d+x[+-]?\\d+))$",
+					"maxLength": 128
+				},
+				"fit": {
+					"type": "string",
+					"enum": [
+						"relative",
+						"contain",
+						"micro",
+						"cover"
+					]
+				},
+				"id": {
+					"type": "string",
+					"minLength": 16,
+					"maxLength": 1024
+				},
+				"key": {
+					"type": "string",
+					"minLength": 16,
+					"maxLength": 1024
+				},
+				"base64": {
+					"type": "string",
+					"maxLength": 2048
+				}
+			},
+			"required": [
+				"type",
+				"mimeType",
+				"qualityType"
+			]
+		},
+		"MongoObjectId": {
+			"type": "string",
+			"pattern": "^[a-f\\d]{24}$"
+		},
+		"NotificationToken": {
+			"title": "NotificationToken",
+			"description": "NotificationToken",
+			"type": "object",
+			"properties": {
+				"token": {
+					"type": "string",
+					"minLength": 1,
+					"maxLength": 2048
+				},
+				"udid": {
+					"type": "string",
+					"format": "uuid",
+					"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+				},
+				"platform": {
+					"type": "string",
+					"enum": [
+						"ios",
+						"android"
+					]
+				},
+				"env": {
+					"type": "string",
+					"enum": [
+						"PROD",
+						"DEV"
+					]
+				},
+				"updated": {
+					"type": "integer",
+					"format": "int64",
+					"minimum": 0
+				}
+			},
+			"required": [
+				"token",
+				"udid",
+				"platform",
+				"env"
+			]
+		},
+		"TimelineEvent": {
+			"title": "TimelineEvent",
+			"description": "TimelineEvent",
+			"type": "object",
+			"properties": {
+				"reactionTimestamp": {
+					"type": "number",
+					"format": "double",
+					"minimum": 0
+				},
+				"contentTimestamp": {
+					"type": "number",
+					"format": "double",
+					"minimum": 0
+				},
+				"event": {
+					"type": "string",
+					"enum": [
+						"play",
+						"pause"
+					]
+				}
+			},
+			"required": [
+				"reactionTimestamp",
+				"contentTimestamp",
+				"event"
+			]
+		},
+		"UserId": {
+			"type": "string",
+			"format": "region_uuid",
+			"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+		},
+		"UserIdReadOnly": {
+			"title": "UserIdReadOnly",
+			"description": "UserId standardised attribute matching 'region_uuid' or 'uuid' regex pattern. Can not be updated.",
+			"type": "string",
+			"format": "region_uuid",
+			"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$",
+			"readOnly": true
+		},
+		"UserIdsStringList": {
+			"type": "string",
+			"format": "UserId",
+			"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12},?){1,20}$"
+		},
+		"YoutubeId": {
+			"type": "string",
+			"pattern": "^[\\w-]{11}$"
+		},
+		"RequestAuthChangePassword": {
+			"title": "RequestAuthChangePassword",
+			"description": "Request model for auth/changePassword endpoint.",
+			"type": "object",
+			"properties": {
+				"oldPassword": {
+					"type": "string",
+					"description": "Old password, must contain at least one number, lowercase and uppercase letter.",
+					"minLength": 8,
+					"pattern": "^(?=\\S*[a-z])(?=\\S*[A-Z])(?=\\S*\\d)\\S{8,}$"
+				},
+				"password": {
+					"type": "string",
+					"description": "New password, must contain at least one number, lowercase and uppercase letter.",
+					"minLength": 8,
+					"pattern": "^(?=\\S*[a-z])(?=\\S*[A-Z])(?=\\S*\\d)\\S{8,}$"
+				},
+				"accessToken": {
+					"description": "The access token.",
+					"type": "string",
+					"pattern": "^[\\w\\-=\\.]+$"
+				}
+			},
+			"required": [
+				"oldPassword",
+				"password",
+				"accessToken"
+			]
+		},
+		"RequestAuthConfirmForgotPassword": {
+			"title": "RequestAuthConfirmForgotPassword",
+			"description": "Request model for auth/confirmForgotPassword endpoint.",
+			"type": "object",
+			"properties": {
+				"username": {
+					"type": "string",
+					"description": "Unique username (can be an email address).",
+					"pattern": "^[\\w\\-\\@\\.]+$",
+					"minLength": 3,
+					"maxLength": 50
+				},
+				"confirmationCode": {
+					"description": "Confirmation code.",
+					"type": "string",
+					"pattern": "^\\S+$",
+					"minLength": 1,
+					"maxLength": 2048
+				},
+				"password": {
+					"type": "string",
+					"description": "Password attribute requires numbers, lowercase and uppercase letters.",
+					"minLength": 8,
+					"pattern": "^(?=\\S*[a-z])(?=\\S*[A-Z])(?=\\S*\\d)\\S{8,}$"
+				}
+			},
+			"required": [
+				"username",
+				"confirmationCode",
+				"password"
+			]
+		},
+		"RequestAuthConfirmSignUp": {
+			"title": "RequestAuthConfirmSignUp",
+			"description": "Request model for auth/confirmSignUp endpoint.",
+			"type": "object",
+			"properties": {
+				"username": {
+					"type": "string",
+					"description": "Unique username (can be an email address).",
+					"pattern": "^[\\w\\-\\@\\.]+$",
+					"minLength": 3,
+					"maxLength": 50
+				},
+				"confirmationCode": {
+					"description": "Confirmation code.",
+					"type": "string",
+					"pattern": "^\\S+$",
+					"minLength": 1,
+					"maxLength": 2048
+				},
+				"displayname": {
+					"type": "string",
+					"description": "Display name.",
+					"minLength": 3,
+					"maxLength": 50
+				},
+				"bio": {
+					"type": "string",
+					"maxLength": 2000
+				},
+				"isPublic": {
+					"type": "boolean",
+					"default": true
+				}
+			},
+			"required": [
+				"username",
+				"confirmationCode"
+			]
+		},
+		"RequestAuthForgotPassword": {
+			"title": "RequestAuthForgotPassword",
+			"description": "Request model for auth/forgotPassword endpoint.",
+			"type": "object",
+			"properties": {
+				"username": {
+					"type": "string",
+					"description": "Unique username assigned alias (email or phone).",
+					"pattern": "^[\\w\\-\\@\\.]+$",
+					"minLength": 3,
+					"maxLength": 50
+				}
+			},
+			"required": [
+				"username"
+			]
+		},
+		"RequestAuthRefreshToken": {
+			"title": "RequestAuthRefreshToken",
+			"description": "Request model for auth/refreshToken endpoint.",
+			"type": "object",
+			"properties": {
+				"refreshToken": {
+					"description": "The refresh token.",
+					"type": "string",
+					"pattern": "^[\\w\\-=\\.]+$"
+				}
+			},
+			"required": [
+				"refreshToken"
+			]
+		},
+		"RequestAuthResendConfirmationCode": {
+			"title": "RequestAuthResendConfirmationCode",
+			"description": "Request model for auth/resendConfirmationCode endpoint.",
+			"type": "object",
+			"properties": {
+				"username": {
+					"type": "string",
+					"description": "Unique username assigned alias (email or phone).",
+					"pattern": "^[\\w\\-\\@\\.]+$",
+					"minLength": 3,
+					"maxLength": 50
+				}
+			},
+			"required": [
+				"username"
+			]
+		},
+		"RequestAuthSignIn": {
+			"title": "RequestAuthSignIn",
+			"description": "Request model for auth/signIn and auth/confirmSignUp endpoints.",
+			"type": "object",
+			"properties": {
+				"username": {
+					"type": "string",
+					"description": "Unique username assigned alias (email or phone).",
+					"pattern": "^[\\w\\-\\@\\.]+$",
+					"minLength": 3,
+					"maxLength": 50
+				},
+				"password": {
+					"type": "string",
+					"description": "Password attribute requires numbers, lowercase and uppercase letters.",
+					"minLength": 8,
+					"pattern": "^(?=\\S*[a-z])(?=\\S*[A-Z])(?=\\S*\\d)\\S{8,}$"
+				}
+			},
+			"required": [
+				"username",
+				"password"
+			]
+		},
+		"RequestAuthSignUp": {
+			"title": "RequestAuthSignUp",
+			"description": "Request model for auth/signUp endpoint.",
+			"type": "object",
+			"properties": {
+				"username": {
+					"type": "string",
+					"description": "Unique username (can be an email address).",
+					"pattern": "^[\\w\\-\\@\\.]+$",
+					"minLength": 3,
+					"maxLength": 50
+				},
+				"password": {
+					"type": "string",
+					"description": "Password attribute requires numbers, lowercase and uppercase letters.",
+					"minLength": 8,
+					"pattern": "^(?=\\S*[a-z])(?=\\S*[A-Z])(?=\\S*\\d)\\S{8,}$"
+				},
+				"email": {
+					"description": "At least one of attributes 'email' and 'phone' must be specified.",
+					"type": "string",
+					"format": "email",
+					"pattern": "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$"
+				},
+				"phone": {
+					"description": "At least one of attributes 'email' and 'phone' must be specified.",
+					"type": "string",
+					"format": "phone"
+				}
+			},
+			"required": [
+				"username",
+				"password"
+			]
+		},
+		"RequestListSize": {
+			"type": "integer",
+			"format": "int32",
+			"minimum": 0,
+			"maximum": 100,
+			"default": 20
+		},
+		"RequestListStartKey": {
+			"type": "string",
+			"pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$"
+		},
+		"RequestPublishAvatar": {
+			"title": "RequestPublishAvatar",
+			"description": "Request model for publish user avatar endpoint.",
+			"type": "object",
+			"properties": {
+				"_id": {
+					"type": "string",
+					"format": "uuid",
+					"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+				}
+			},
+			"required": [
+				"_id"
+			]
+		},
+		"RequestQueryBoolean": {
+			"type": "string",
+			"format": "boolean",
+			"enum": [
+				"true",
+				"false",
+				"0",
+				"1",
+				""
+			],
+			"default": ""
+		},
+		"RequestReactionCommentListType": {
+			"type": "string",
+			"enum": [
+				"reaction"
+			]
+		},
+		"RequestReactionLikeListType": {
+			"title": "RequestReactionLikeListType",
+			"description": "Request model for 'type' parameter of 'reaction/like/list' endpoint",
+			"type": "string",
+			"enum": [
+				"reaction"
+			]
+		},
+		"RequestReactionListSort": {
+			"type": "string",
+			"enum": [
+				"popular",
+				"followings",
+				"latest"
+			],
+			"default": "latest"
+		},
+		"RequestReactionListType": {
+			"type": "string",
+			"enum": [
+				"hot",
+				"following",
+				"video",
+				"hashtag",
+				"user"
+			]
+		},
+		"RequestUserListType": {
+			"type": "string",
+			"enum": [
+				"leaderboard",
+				"leaderboard-weekly",
+				"recent-reactors",
+				"followings",
+				"followers",
+				"blocking",
+				"pending-followers",
+				"promoted",
+				"ids"
+			]
+		},
+		"RequestVideoListType": {
+			"type": "string",
+			"enum": [
+				"following",
+				"personalised",
+				"trending",
+				"featured",
+				"latest",
+				"hashtag",
+				"related",
+				"user",
+				"youtube",
+				"facebook",
+				"instagram"
+			]
+		},
+		"ResponseAuthSignIn": {
+			"title": "ResponseAuthSignIn",
+			"description": "Response model for auth/signIn and auth/confirmSignUp endpoints returned upon successful user code confirmation.",
+			"type": "object",
+			"properties": {
+				"tokenType": {
+					"type": "string",
+					"description": "The token type.",
+					"enum": [
+						"Bearer",
+						""
+					],
+					"default": "Bearer"
+				},
+				"expiresIn": {
+					"description": "The expiration period of the authentication result in seconds.",
+					"type": "integer",
+					"format": "int32",
+					"minimum": 0,
+					"default": 3600
+				},
+				"accessToken": {
+					"description": "The access token.",
+					"type": "string",
+					"pattern": "^[\\w\\-=\\.]+$"
+				},
+				"refreshToken": {
+					"description": "The refresh token.",
+					"type": "string",
+					"pattern": "^[\\w\\-=\\.]+$"
+				},
+				"idToken": {
+					"description": "The ID token.",
+					"type": "string",
+					"pattern": "^[\\w\\-=\\.]+$"
+				}
+			},
+			"required": [
+				"idToken",
+				"accessToken"
+			]
+		},
+		"ResponseAuthSignUp": {
+			"title": "ResponseAuthSignUp",
+			"description": "Response model for auth/signUp, auth/resendConfirmationCode and auth/forgotPassword endpoint returned after successful user registration. If userConfirmed attribute equals false, user should have received an email or sms message with confirmation code which must be posted to auth/confirmSignUp endpoint to complete the registration process.",
+			"type": "object",
+			"properties": {
+				"userConfirmed": {
+					"type": "boolean",
+					"description": "Determines whether additional confirmation is required. Use auth/confirmSignUp endpoint to complete the registration process.",
+					"default": false
+				},
+				"codeDeliveryDestination": {
+					"type": "string",
+					"description": "The destination for the code delivery details."
+				},
+				"codeDeliveryMedium": {
+					"type": "string",
+					"description": "The delivery medium (email message or phone number).",
+					"enum": [
+						"SMS",
+						"EMAIL",
+						"NONE"
+					],
+					"default": "NONE"
+				}
+			},
+			"required": [
+				"userConfirmed"
+			]
+		},
+		"ResponseEmpty": {
+			"title": "ResponseEmpty",
+			"description": "Successful empty response.",
+			"type": "string",
+			"default": ""
+		},
+		"ResponseInitiateUpload": {
+			"title": "ResponseInitiateUpload",
+			"description": "Response model for upload endpoints.",
+			"type": "object",
+			"properties": {
+				"signedUrl": {
+					"type": "string"
+				},
+				"urlType": {
+					"type": "string",
+					"enum": [
+						"s3",
+						"cloudfront"
+					],
+					"default": "s3"
+				},
+				"httpMethod": {
+					"type": "string",
+					"enum": [
+						"GET",
+						"HEAD",
+						"OPTIONS",
+						"PUT",
+						"POST",
+						"DELETE"
+					],
+					"default": "PUT"
+				},
+				"expires": {
+					"type": "integer",
+					"format": "int32",
+					"minimum": 0,
+					"default": 1800
+				}
+			},
+			"required": [
+				"signedUrl"
+			]
+		},
+		"Reaction": {
+			"title": "Reaction",
+			"description": "Reaction",
+			"type": "object",
+			"properties": {
+				"_id": {
+					"title": "IdReadOnly",
+					"description": "Standardised Id attribute matching 'uuid' regex pattern. Can not be updated.",
+					"type": "string",
+					"format": "uuid",
+					"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$",
+					"readOnly": true
+				},
+				"userId": {
+					"title": "UserIdReadOnly",
+					"description": "UserId standardised attribute matching 'region_uuid' or 'uuid' regex pattern. Can not be updated.",
+					"type": "string",
+					"format": "region_uuid",
+					"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$",
+					"readOnly": true
+				},
+				"originalVideoId": {
+					"title": "IdReadOnly",
+					"description": "Standardised Id attribute matching 'uuid' regex pattern. Can not be updated.",
+					"type": "string",
+					"format": "uuid",
+					"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$",
+					"readOnly": true
+				},
+				"originalVideoUserId": {
+					"title": "UserIdReadOnly",
+					"description": "UserId standardised attribute matching 'region_uuid' or 'uuid' regex pattern. Can not be updated.",
+					"type": "string",
+					"format": "region_uuid",
+					"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$",
+					"readOnly": true
+				},
+				"title": {
+					"type": "string",
+					"minLength": 3,
+					"maxLength": 50
+				},
+				"isDeleted": {
+					"type": "boolean",
+					"default": false
+				},
+				"isPrivate": {
+					"type": "boolean",
+					"default": false,
+					"readOnly": true
+				},
+				"isUserPublic": {
+					"type": "boolean",
+					"default": true,
+					"readOnly": true
+				},
+				"isFeatured": {
+					"type": "boolean",
+					"default": false
+				},
+				"publishingTime": {
+					"type": "integer",
+					"format": "int64",
+					"minimum": 0
+				},
+				"featuredTime": {
+					"type": "integer",
+					"format": "int64",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"duration": {
+					"type": "number",
+					"format": "double",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"recordVolume": {
+					"type": "number",
+					"format": "double",
+					"minimum": 0
+				},
+				"likesCount": {
+					"type": "integer",
+					"format": "int64",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"commentsCount": {
+					"type": "integer",
+					"format": "int64",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"likesCounts": {
+					"type": "object",
+					"properties": {
+						"love": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"lol": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"wow": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"sad": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"angry": {
+							"type": "integer",
+							"format": "int64"
+						}
+					},
+					"readOnly": true
+				},
+				"thumbnailFiles": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/MediaFile"
+					},
+					"readOnly": true
+				},
+				"videoFiles": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/MediaFile"
+					},
+					"readOnly": true
+				},
+				"hashtags": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"minLength": 1
+					},
+					"readOnly": true
+				},
+				"adType": {
+					"type": "string",
+					"enum": [
+						"default",
+						"trending",
+						"featured",
+						"latest",
+						"intro",
+						"followingReaction",
+						"followingVideo"
+					],
+					"default": "default",
+					"readOnly": true
+				},
+				"orientation": {
+					"type": "integer",
+					"enum": [
+						0,
+						90,
+						180,
+						270
+					],
+					"default": 0
+				},
+				"timeline": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/TimelineEvent"
+					}
+				}
+			}
+		},
+		"ReactionComment": {
+			"title": "ReactionComment",
+			"description": "ReactionComment",
+			"type": "object",
+			"properties": {
+				"_id": {
+					"type": "string",
+					"format": "uuid",
+					"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+				},
+				"userId": {
+					"type": "string",
+					"format": "region_uuid",
+					"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+				},
+				"reactionId": {
+					"type": "string",
+					"format": "uuid",
+					"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+				},
+				"reactionUserId": {
+					"type": "string",
+					"format": "region_uuid",
+					"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+				},
+				"isDeleted": {
+					"type": "boolean",
+					"default": false
+				},
+				"commentTime": {
+					"type": "integer",
+					"format": "int64",
+					"minimum": 0
+				},
+				"timeOffset": {
+					"type": "number",
+					"format": "double",
+					"minimum": 0
+				},
+				"comment": {
+					"type": "string",
+					"minLength": 1
+				}
+			},
+			"required": [
+				"reactionId",
+				"comment"
+			]
+		},
+		"ReactionCommentList": {
+			"title": "ReactionCommentList",
+			"description": "an array of ReactionComment models",
+			"allOf": [
+				{
+					"$ref": "#/definitions/List"
+				},
+				{
+					"properties": {
+						"items": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/ReactionComment"
+							}
+						}
+					},
+					"required": [
+						"items"
+					]
+				}
+			]
+		},
+		"ReactionLike": {
+			"title": "ReactionLike",
+			"description": "ReactionLike",
+			"type": "object",
+			"properties": {
+				"_id": {
+					"type": "string",
+					"pattern": "^[a-f\\d]{24}$"
+				},
+				"userId": {
+					"type": "string",
+					"format": "region_uuid",
+					"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+				},
+				"reactionId": {
+					"type": "string",
+					"format": "uuid",
+					"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+				},
+				"reactionUserId": {
+					"type": "string",
+					"format": "region_uuid",
+					"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$"
+				},
+				"likeTime": {
+					"type": "integer",
+					"format": "int64",
+					"minimum": 0
+				},
+				"timeOffset": {
+					"type": "number",
+					"format": "double",
+					"minimum": 0
+				},
+				"type": {
+					"type": "string",
+					"minLength": 1,
+					"enum": [
+						"love",
+						"lol",
+						"wow",
+						"sad",
+						"angry"
+					],
+					"default": "love"
+				}
+			},
+			"required": [
+				"reactionId",
+				"type"
+			]
+		},
+		"ReactionLikeList": {
+			"title": "ReactionLikeList",
+			"description": "an array of ReactionLike models",
+			"allOf": [
+				{
+					"$ref": "#/definitions/List"
+				},
+				{
+					"properties": {
+						"items": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/ReactionLike"
+							}
+						}
+					},
+					"required": [
+						"items"
+					]
+				}
+			]
+		},
+		"ReactionList": {
+			"title": "ReactionList",
+			"description": "an array of Reaction models",
+			"allOf": [
+				{
+					"$ref": "#/definitions/List"
+				},
+				{
+					"properties": {
+						"items": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Reaction"
+							}
+						},
+						"users": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/User"
+							}
+						}
+					}
+				}
+			]
+		},
+		"User": {
+			"title": "User",
+			"description": "User",
+			"type": "object",
+			"properties": {
+				"_id": {
+					"title": "UserIdReadOnly",
+					"description": "UserId standardised attribute matching 'region_uuid' or 'uuid' regex pattern. Can not be updated.",
+					"type": "string",
+					"format": "region_uuid",
+					"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$",
+					"readOnly": true
+				},
+				"displayname": {
+					"type": "string",
+					"minLength": 3,
+					"maxLength": 50
+				},
+				"username": {
+					"type": "string",
+					"minLength": 3,
+					"maxLength": 50,
+					"readOnly": true
+				},
+				"followingsCount": {
+					"type": "integer",
+					"format": "int32",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"followersCount": {
+					"type": "integer",
+					"format": "int32",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"videosCount": {
+					"type": "integer",
+					"format": "int32",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"reactionsCount": {
+					"type": "integer",
+					"format": "int32",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"isDeleted": {
+					"type": "boolean",
+					"default": false,
+					"readOnly": true
+				},
+				"isPublic": {
+					"type": "boolean",
+					"default": true
+				},
+				"isMsgPublic": {
+					"type": "boolean",
+					"default": true
+				},
+				"isAdmin": {
+					"type": "boolean",
+					"default": false,
+					"readOnly": true
+				},
+				"isCampaign": {
+					"type": "boolean",
+					"default": false,
+					"readOnly": true
+				},
+				"score": {
+					"type": "integer",
+					"format": "int32",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"weeklyScore": {
+					"type": "integer",
+					"format": "int32",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"scoreIcon": {
+					"type": "string",
+					"enum": [
+						"chick",
+						"wink",
+						"sunglasses",
+						"tongue",
+						"tongue2",
+						"crazy",
+						"star",
+						"cup",
+						"diamond",
+						"pieroga",
+						"crown",
+						"fire"
+					],
+					"default": "chick",
+					"readOnly": true
+				},
+				"scoreIsWeeklyTop": {
+					"type": "boolean",
+					"default": false,
+					"readOnly": true
+				},
+				"scoreIsFire": {
+					"type": "boolean",
+					"default": false,
+					"readOnly": true
+				},
+				"bio": {
+					"type": "string",
+					"maxLength": 2000
+				},
+				"avatarFiles": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/MediaFile"
+					}
+				},
+				"relationship": {
+					"type": "string",
+					"enum": [
+						"followed",
+						"unfollowed",
+						"requested",
+						"blocking",
+						"blocked",
+						"unknown"
+					],
+					"default": "unknown",
+					"readOnly": true
+				}
+			}
+		},
+		"UserList": {
+			"title": "UserList",
+			"description": "an array of User models",
+			"allOf": [
+				{
+					"$ref": "#/definitions/List"
+				},
+				{
+					"properties": {
+						"items": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/User"
+							}
+						}
+					},
+					"required": [
+						"items"
+					]
+				}
+			]
+		},
+		"UserMe": {
+			"title": "UserMe",
+			"description": "User model of current user",
+			"type": "object",
+			"allOf": [
+				{
+					"$ref": "#/definitions/User"
+				},
+				{
+					"properties": {
+						"pendingFollowers": {
+							"type": "integer",
+							"format": "int32",
+							"minimum": 0,
+							"readOnly": true
+						},
+						"badge": {
+							"type": "integer",
+							"format": "int32",
+							"minimum": 0,
+							"readOnly": true
+						},
+						"badgeMsg": {
+							"type": "integer",
+							"format": "int32",
+							"minimum": 0,
+							"readOnly": true
+						},
+						"badgeOther": {
+							"type": "integer",
+							"format": "int32",
+							"minimum": 0,
+							"readOnly": true
+						}
+					}
+				}
+			]
+		},
+		"Video": {
+			"title": "Video",
+			"description": "Video",
+			"type": "object",
+			"properties": {
+				"_id": {
+					"title": "IdReadOnly",
+					"description": "Standardised Id attribute matching 'uuid' regex pattern. Can not be updated.",
+					"type": "string",
+					"format": "uuid",
+					"pattern": "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$",
+					"readOnly": true
+				},
+				"userId": {
+					"title": "UserIdReadOnly",
+					"description": "UserId standardised attribute matching 'region_uuid' or 'uuid' regex pattern. Can not be updated.",
+					"type": "string",
+					"format": "region_uuid",
+					"pattern": "^([a-z]{2}-[a-z]+?-[0-9]+:)?[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$",
+					"readOnly": true
+				},
+				"title": {
+					"type": "string",
+					"minLength": 3,
+					"maxLength": 50
+				},
+				"description": {
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 1024
+				},
+				"isDeleted": {
+					"type": "boolean",
+					"default": false
+				},
+				"isPrivate": {
+					"type": "boolean",
+					"default": false,
+					"readOnly": true
+				},
+				"isUserPublic": {
+					"type": "boolean",
+					"default": true,
+					"readOnly": true
+				},
+				"isFeatured": {
+					"type": "boolean",
+					"default": false
+				},
+				"publishingTime": {
+					"type": "integer",
+					"format": "int64",
+					"minimum": 0
+				},
+				"featuredTime": {
+					"type": "integer",
+					"format": "int64",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"duration": {
+					"type": "number",
+					"format": "double",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"aspectRatio": {
+					"type": "number",
+					"format": "double",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"reactionsCount": {
+					"type": "integer",
+					"format": "int32",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"publicReactionsCount": {
+					"type": "integer",
+					"format": "int32",
+					"minimum": 0,
+					"readOnly": true
+				},
+				"thumbnailFiles": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/MediaFile"
+					}
+				},
+				"videoFiles": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/MediaFile"
+					}
+				},
+				"hashtags": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"minLength": 1
+					},
+					"readOnly": true
+				},
+				"adType": {
+					"type": "string",
+					"enum": [
+						"trending",
+						"featured",
+						"latest"
+					],
+					"readOnly": true
+				},
+				"trendinessScore": {
+					"type": "number",
+					"format": "double",
+					"minimum": 0,
+					"readOnly": true
+				}
+			}
+		},
+		"VideoList": {
+			"title": "VideoList",
+			"description": "an array of Video models",
+			"allOf": [
+				{
+					"$ref": "#/definitions/List"
+				},
+				{
+					"properties": {
+						"items": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Video"
+							}
+						},
+						"users": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/User"
+							}
+						}
+					}
+				}
+			]
+		}
+	},
+	"x-amazon-apigateway-documentation": {
+		"version": "2a854c323bbe1fb6b3ff07be5b9b5dca88987691",
+		"createdDate": "2018-05-02T12:56:12Z",
+		"documentationParts": [
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/auth/changePassword",
+					"method": "POST"
+				},
+				"properties": {
+					"description": "Changes user password. Returns empty response on success.",
+					"summary": "Change password",
+					"tags": [
+						"auth"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/auth/confirmForgotPassword",
+					"method": "POST"
+				},
+				"properties": {
+					"description": "Resets user password by providing one-time code and new password and returns new access tokens on success.",
+					"summary": "Confirm forgot password",
+					"tags": [
+						"auth"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/auth/confirmSignUp",
+					"method": "POST"
+				},
+				"properties": {
+					"description": "Confirms user registration by providing valid confirmation code and returns new access tokens on success.",
+					"summary": "User registration confirmation",
+					"tags": [
+						"auth"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/auth/forgotPassword",
+					"method": "POST"
+				},
+				"properties": {
+					"description": "Sends one-time code for resetting password via medium specified on sign-up (EMAIL or SMS).",
+					"summary": "Forgot password",
+					"tags": [
+						"auth"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/auth/refreshToken",
+					"method": "POST"
+				},
+				"properties": {
+					"description": "Signs user in with refresh token flow, returns access tokens on success.",
+					"summary": "Refresh token sign-in",
+					"tags": [
+						"auth"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/auth/resendConfirmationCode",
+					"method": "POST"
+				},
+				"properties": {
+					"description": "Resends confirmation code via medium specified on sign-up (EMAIL or SMS).",
+					"summary": "Confirmation code resend",
+					"tags": [
+						"auth"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/auth/signIn",
+					"method": "POST"
+				},
+				"properties": {
+					"description": "Signs user in with basic user password flow, returns access tokens on success.",
+					"summary": "User sign-in",
+					"tags": [
+						"auth"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/auth/signUp",
+					"method": "POST"
+				},
+				"properties": {
+					"description": "Creates user in assigned Cognito user pool and primary backend database, returns confirmation code delivery details.",
+					"summary": "User registration",
+					"tags": [
+						"auth"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/auth/testCredentials",
+					"method": "GET"
+				},
+				"properties": {
+					"description": "Verifies supplied idToken",
+					"summary": "Test authentication",
+					"tags": [
+						"auth",
+						"system"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/reaction/comment/list",
+					"method": "GET"
+				},
+				"properties": {
+					"description": "Fetches list of reaction comments and returns ReactionCommentList model containing zero or more ReactionComment models.",
+					"summary": "Fetch multiple reaction comments",
+					"tags": [
+						"reaction"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/reaction/comment",
+					"method": "GET"
+				},
+				"properties": {
+					"description": "Fetches reaction comment by Id and returns ReactionComment model.",
+					"summary": "Fetch reaction comment by Id",
+					"tags": [
+						"reaction"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/reaction/initiateUpload",
+					"method": "POST"
+				},
+				"properties": {
+					"description": "Initiates reaction upload and returns AWS signed URL to S3 or CloudFront services to upload an actual reaction file, preferably using AWS S3 uploader.",
+					"summary": "Initiate reaction upload",
+					"tags": [
+						"reaction"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/reaction/like/list",
+					"method": "GET"
+				},
+				"properties": {
+					"description": "Fetches list of reaction likes and returns ReactionCommentList model containing zero or more ReactionComment models.",
+					"summary": "Fetch multiple reaction likes",
+					"tags": [
+						"reaction"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/reaction/like",
+					"method": "GET"
+				},
+				"properties": {
+					"description": "Fetches reaction like by Id and returns ReactionLike model.",
+					"summary": "Fetch reaction like by Id",
+					"tags": [
+						"reaction"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/reaction/list",
+					"method": "GET"
+				},
+				"properties": {
+					"description": "Fetches list of reactions and returns ReactionList model containing zero or more Reactions models.",
+					"summary": "Fetch multiple reactions",
+					"tags": [
+						"reaction"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/reaction",
+					"method": "DELETE"
+				},
+				"properties": {
+					"description": "Deletes reaction.",
+					"summary": "Delete reaction",
+					"tags": [
+						"reaction"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/reaction",
+					"method": "GET"
+				},
+				"properties": {
+					"description": "Fetches reaction by Id and returns Reaction model.",
+					"summary": "Fetch reaction by Id",
+					"tags": [
+						"reaction"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/reaction",
+					"method": "PUT"
+				},
+				"properties": {
+					"description": "Updates reaction.",
+					"summary": "Update reaction",
+					"tags": [
+						"reaction"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/user/list",
+					"method": "GET"
+				},
+				"properties": {
+					"description": "Fetches list of users and returns UserList model containing zero or more User models.",
+					"summary": "Fetch multiple users",
+					"tags": [
+						"user"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/user/me/avatar/initiateUpload",
+					"method": "POST"
+				},
+				"properties": {
+					"description": "Initiates avatar upload of current user and returns AWS signed URL to S3 or CloudFront services to upload an actual thumbnail file, preferably using AWS S3 uploader.",
+					"summary": "Initiate avatar upload of current user",
+					"tags": [
+						"user"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/user/me/avatar/publish",
+					"method": "POST"
+				},
+				"properties": {
+					"description": "Publishes and propagates newly uploaded avatar of currently logged in user. Call this endpoint after successful avatar upload to AWS signed URL obtained from initiateMyAvatarUpload operation.",
+					"summary": "Publish avatar of current user",
+					"tags": [
+						"user"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/user/me",
+					"method": "GET"
+				},
+				"properties": {
+					"description": "Fetches caller of this method as user model.",
+					"summary": "Fetch current user",
+					"tags": [
+						"user"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/user/me",
+					"method": "PUT"
+				},
+				"properties": {
+					"description": "Updates current user.",
+					"summary": "Updates current user",
+					"tags": [
+						"user"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/user",
+					"method": "GET"
+				},
+				"properties": {
+					"description": "Fetches user by Id and returns User model.",
+					"summary": "Fetch user by Id",
+					"tags": [
+						"user"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/video/initiateUpload",
+					"method": "POST"
+				},
+				"properties": {
+					"description": "Initiates video upload and returns AWS signed URL to S3 or CloudFront services to upload an actual video file, preferably using AWS S3 uploader.",
+					"summary": "Initiate video upload",
+					"tags": [
+						"video"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/video/initiateUploadPublic",
+					"method": "POST"
+				},
+				"properties": {
+					"description": "Initiates public video upload and returns AWS signed URL to S3 or CloudFront services to upload an actual video file, preferably using AWS S3 uploader. Method does not require authorisation.",
+					"summary": "Initiate public video upload",
+					"tags": [
+						"video"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/video/list",
+					"method": "GET"
+				},
+				"properties": {
+					"description": "Fetches list of videos and returns VideoList model containing zero or more Video models.",
+					"summary": "Fetch multiple videos",
+					"tags": [
+						"video"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/video",
+					"method": "DELETE"
+				},
+				"properties": {
+					"description": "Deletes video.",
+					"summary": "Delete video",
+					"tags": [
+						"video"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/video",
+					"method": "GET"
+				},
+				"properties": {
+					"description": "Fetches video by Id and returns Video model.",
+					"summary": "Fetch video by Id",
+					"tags": [
+						"video"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/video",
+					"method": "POST"
+				},
+				"properties": {
+					"description": "Creates and publishes a video if it doesn't exist yet or updates existing one. Call this endpoint after successful upload.",
+					"summary": "Create/update video",
+					"tags": [
+						"video"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "METHOD",
+					"path": "/video",
+					"method": "PUT"
+				},
+				"properties": {
+					"description": "Updates video.",
+					"summary": "Update video",
+					"tags": [
+						"video"
+					]
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "FacebookId"
+				},
+				"properties": {
+					"description": "Facebook ID"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "FulltextPhrase"
+				},
+				"properties": {
+					"description": "Fulltext phrase standardised attribute"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "Hashtag"
+				},
+				"properties": {
+					"description": "Hashtag standardised attribute."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "Id"
+				},
+				"properties": {
+					"description": "Standardised Id attribute matching 'uuid' regex pattern."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "IdReadOnly"
+				},
+				"properties": {
+					"description": "Standardised Id attribute matching 'uuid' regex pattern. Can not be updated."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "InstagramId"
+				},
+				"properties": {
+					"description": "Instagram ID"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "List"
+				},
+				"properties": {
+					"description": "iterable collection of models"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "MediaFile"
+				},
+				"properties": {
+					"description": "MediaFile"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "MongoObjectId"
+				},
+				"properties": {
+					"description": "Standardised MongoDB ObjectId attribute"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "NotificationToken"
+				},
+				"properties": {
+					"description": "NotificationToken"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "Reaction"
+				},
+				"properties": {
+					"description": "Reaction"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "ReactionComment"
+				},
+				"properties": {
+					"description": "ReactionComment"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "ReactionCommentList"
+				},
+				"properties": {
+					"description": "an array of ReactionComment models"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "ReactionLike"
+				},
+				"properties": {
+					"description": "ReactionLike"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "ReactionLikeList"
+				},
+				"properties": {
+					"description": "an array of ReactionLike models"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "ReactionList"
+				},
+				"properties": {
+					"description": "an array of Reaction models"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestAuthChangePassword"
+				},
+				"properties": {
+					"description": "Request model for auth/changePassword endpoint."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestAuthConfirmForgotPassword"
+				},
+				"properties": {
+					"description": "Request model for auth/confirmForgotPassword endpoint."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestAuthConfirmSignUp"
+				},
+				"properties": {
+					"description": "Request model for auth/confirmSignUp endpoint."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestAuthForgotPassword"
+				},
+				"properties": {
+					"description": "Request model for auth/forgotPassword endpoint."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestAuthRefreshToken"
+				},
+				"properties": {
+					"description": "Request model for auth/refreshToken endpoint."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestAuthResendConfirmationCode"
+				},
+				"properties": {
+					"description": "Request model for auth/resendConfirmationCode endpoint."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestAuthSignIn"
+				},
+				"properties": {
+					"description": "Request model for auth/signIn and auth/confirmSignUp endpoints."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestAuthSignUp"
+				},
+				"properties": {
+					"description": "Request model for auth/signUp endpoint."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestListSize"
+				},
+				"properties": {
+					"description": "Request model for 'size' parameter of any List endpoint"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestListStartKey"
+				},
+				"properties": {
+					"description": "Request model for 'startKey' parameter of any List endpoint"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestPublishAvatar"
+				},
+				"properties": {
+					"description": "Request model for publish user avatar endpoint."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestQueryBoolean"
+				},
+				"properties": {
+					"description": "Request model for generic boolean query parameter"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestReactionCommentListType"
+				},
+				"properties": {
+					"description": "Request model for 'type' parameter of 'reaction/comment/list' endpoint"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestReactionLikeListType"
+				},
+				"properties": {
+					"description": "Request model for 'type' parameter of 'reaction/like/list' endpoint"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestReactionListSort"
+				},
+				"properties": {
+					"description": "Request model for 'sort' parameter of 'video/list' endpoint"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestReactionListType"
+				},
+				"properties": {
+					"description": "Request model for 'type' parameter of 'reaction/list' endpoint"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestUserListType"
+				},
+				"properties": {
+					"description": "Request model for 'type' parameter of 'video/list' endpoint"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "RequestVideoListType"
+				},
+				"properties": {
+					"description": "Request model for 'type' parameter of 'video/list' endpoint"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "ResponseAuthSignIn"
+				},
+				"properties": {
+					"description": "Response model for auth/signIn and auth/confirmSignUp endpoints returned upon successful user code confirmation."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "ResponseAuthSignUp"
+				},
+				"properties": {
+					"description": "Response model for auth/signUp, auth/resendConfirmationCode and auth/forgotPassword endpoint returned after successful user registration. If userConfirmed attribute equals false, user should have received an email or sms message with confirmation code which must be posted to auth/confirmSignUp endpoint to complete the registration process."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "ResponseEmpty"
+				},
+				"properties": {
+					"description": "Successful empty response."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "ResponseInitiateUpload"
+				},
+				"properties": {
+					"description": "Response model for upload endpoints."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "TimelineEvent"
+				},
+				"properties": {
+					"description": "TimelineEvent"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "User"
+				},
+				"properties": {
+					"description": "User"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "UserId"
+				},
+				"properties": {
+					"description": "UserId standardised attribute matching 'region_uuid' or 'uuid' regex pattern."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "UserIdReadOnly"
+				},
+				"properties": {
+					"description": "UserId standardised attribute matching 'region_uuid' or 'uuid' regex pattern. Can not be updated."
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "UserIdsStringList"
+				},
+				"properties": {
+					"description": "Comma-separated List of UserId values. Used for parsing user ids into array of User models from http query. Size of this array is limited to 1-20 elements"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "UserList"
+				},
+				"properties": {
+					"description": "an array of User models"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "UserMe"
+				},
+				"properties": {
+					"description": "User model of current user"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "Video"
+				},
+				"properties": {
+					"description": "Video"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "VideoList"
+				},
+				"properties": {
+					"description": "an array of Video models"
+				}
+			},
+			{
+				"location": {
+					"type": "MODEL",
+					"name": "YoutubeId"
+				},
+				"properties": {
+					"description": "Youtube video ID"
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video/initiateUploadPublic",
+					"method": "POST",
+					"name": "campaignId"
+				},
+				"properties": {
+					"description": "Campaign Id. Value must match UserId model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/list",
+					"method": "GET",
+					"name": "excludeReactionId"
+				},
+				"properties": {
+					"description": "Exclude specific reaction. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video/list",
+					"method": "GET",
+					"name": "excludeUserId"
+				},
+				"properties": {
+					"description": "Exclude videos posted by specific user from the resultset. Value must match UserId model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video/list",
+					"method": "GET",
+					"name": "excludeVideoId"
+				},
+				"properties": {
+					"description": "Exclude specific video from resultset. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video",
+					"method": "POST",
+					"name": "facebookId"
+				},
+				"properties": {
+					"description": "Facebook ID if video was originally fetched from Facebook."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video/list",
+					"method": "GET",
+					"name": "fulltextPhrase"
+				},
+				"properties": {
+					"description": "Show videos matching fulltext phrase. Value must match FulltextPhrase model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/list",
+					"method": "GET",
+					"name": "hashtag"
+				},
+				"properties": {
+					"description": "Fetch reactions containing specific hashtag. Value must match Hashtag model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video/list",
+					"method": "GET",
+					"name": "hashtag"
+				},
+				"properties": {
+					"description": "Fetch videos containing specific hashtag. Value must match Hashtag model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/comment",
+					"method": "GET",
+					"name": "id"
+				},
+				"properties": {
+					"description": "Reaction Comment Id. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/initiateUpload",
+					"method": "POST",
+					"name": "id"
+				},
+				"properties": {
+					"description": "Id. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/like",
+					"method": "GET",
+					"name": "id"
+				},
+				"properties": {
+					"description": "Reaction Like Id. Value must match MongoObjectId model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction",
+					"method": "DELETE",
+					"name": "id"
+				},
+				"properties": {
+					"description": "Video Id. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction",
+					"method": "GET",
+					"name": "id"
+				},
+				"properties": {
+					"description": "Reaction Id. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction",
+					"method": "PUT",
+					"name": "id"
+				},
+				"properties": {
+					"description": "Reaction Id. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/user/me/avatar/initiateUpload",
+					"method": "POST",
+					"name": "id"
+				},
+				"properties": {
+					"description": "Id. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/user/me/avatar/publish",
+					"method": "POST",
+					"name": "id"
+				},
+				"properties": {
+					"description": "Id. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/user",
+					"method": "GET",
+					"name": "id"
+				},
+				"properties": {
+					"description": "User Id. Value must match UserId model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video/initiateUpload",
+					"method": "POST",
+					"name": "id"
+				},
+				"properties": {
+					"description": "Id. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video",
+					"method": "DELETE",
+					"name": "id"
+				},
+				"properties": {
+					"description": "Video Id. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video",
+					"method": "GET",
+					"name": "id"
+				},
+				"properties": {
+					"description": "Video Id. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video",
+					"method": "PUT",
+					"name": "id"
+				},
+				"properties": {
+					"description": "Video Id. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/user/list",
+					"method": "GET",
+					"name": "ids"
+				},
+				"properties": {
+					"description": "Comma-separated list of User Ids."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/comment/list",
+					"method": "GET",
+					"name": "includeUserModels"
+				},
+				"properties": {
+					"description": "Includes users models of users contained in 'items' attribute as 'users' attribute"
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/like/list",
+					"method": "GET",
+					"name": "includeUserModels"
+				},
+				"properties": {
+					"description": "Includes users models of users contained in 'items' attribute as 'users' attribute"
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/list",
+					"method": "GET",
+					"name": "includeUserModels"
+				},
+				"properties": {
+					"description": "Includes users models of users contained in 'items' attribute as 'users' attribute"
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video/list",
+					"method": "GET",
+					"name": "includeUserModels"
+				},
+				"properties": {
+					"description": "Includes users models of users contained in 'items' attribute as 'users' attribute"
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video",
+					"method": "POST",
+					"name": "instagramId"
+				},
+				"properties": {
+					"description": "Instagram ID if video was originally fetched from Instagram."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/comment/list",
+					"method": "GET",
+					"name": "reactionId"
+				},
+				"properties": {
+					"description": "Reaction Id. Value must match ReactionId model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/like/list",
+					"method": "GET",
+					"name": "reactionId"
+				},
+				"properties": {
+					"description": "Reaction Id. Value must match ReactionId model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/comment/list",
+					"method": "GET",
+					"name": "size"
+				},
+				"properties": {
+					"description": "Reaction comment list size. Value must match RequestListSize model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/like/list",
+					"method": "GET",
+					"name": "size"
+				},
+				"properties": {
+					"description": "Reaction like list size. Value must match RequestListSize model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/list",
+					"method": "GET",
+					"name": "size"
+				},
+				"properties": {
+					"description": "Reaction list size. Value must match RequestListSize model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/user/list",
+					"method": "GET",
+					"name": "size"
+				},
+				"properties": {
+					"description": "User list size. Value must match RequestListSize model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video/list",
+					"method": "GET",
+					"name": "size"
+				},
+				"properties": {
+					"description": "Video list size. Value must match RequestListSize model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/list",
+					"method": "GET",
+					"name": "sort"
+				},
+				"properties": {
+					"description": "Sorting method. Value must match RequestReactionListSort model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/comment/list",
+					"method": "GET",
+					"name": "startKey"
+				},
+				"properties": {
+					"description": "Reaction comment list start key. Value must match RequestListStartKey model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/like/list",
+					"method": "GET",
+					"name": "startKey"
+				},
+				"properties": {
+					"description": "Reaction like list start key. Value must match RequestListStartKey model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/list",
+					"method": "GET",
+					"name": "startKey"
+				},
+				"properties": {
+					"description": "Reaction list start key. Value must match RequestListStartKey model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/user/list",
+					"method": "GET",
+					"name": "startKey"
+				},
+				"properties": {
+					"description": "User list start key. Value must match RequestListStartKey model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video/list",
+					"method": "GET",
+					"name": "startKey"
+				},
+				"properties": {
+					"description": "Video list start key. Value must match RequestListStartKey model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/comment/list",
+					"method": "GET",
+					"name": "type"
+				},
+				"properties": {
+					"description": "Reaction comment list type. Value must match RequestReactionCommentListType model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/like/list",
+					"method": "GET",
+					"name": "type"
+				},
+				"properties": {
+					"description": "Reaction like list type. Value must match RequestReactionCommentListType model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/list",
+					"method": "GET",
+					"name": "type"
+				},
+				"properties": {
+					"description": "Reaction list type. Value must match RequestReactionListType model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/user/list",
+					"method": "GET",
+					"name": "type"
+				},
+				"properties": {
+					"description": "User list type. Value must match RequestUserListType model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video/list",
+					"method": "GET",
+					"name": "type"
+				},
+				"properties": {
+					"description": "Video list type. Value must match RequestVideoListType model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/list",
+					"method": "GET",
+					"name": "userId"
+				},
+				"properties": {
+					"description": "Show reactions posted by specific user. Value must match UserId model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/user/list",
+					"method": "GET",
+					"name": "userId"
+				},
+				"properties": {
+					"description": "User Id. Value must match UserId model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video/list",
+					"method": "GET",
+					"name": "userId"
+				},
+				"properties": {
+					"description": "Show videos of specific user. Value must match UserId model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/reaction/list",
+					"method": "GET",
+					"name": "videoId"
+				},
+				"properties": {
+					"description": "Show reactions to specific video. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video/list",
+					"method": "GET",
+					"name": "videoId"
+				},
+				"properties": {
+					"description": "Fetch similar videos to this specific video. Value must match Id model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video/list",
+					"method": "GET",
+					"name": "withPublicReactions"
+				},
+				"properties": {
+					"description": "Fetch videos with at least one public reaction. Value must match RequestQueryBoolean model."
+				}
+			},
+			{
+				"location": {
+					"type": "QUERY_PARAMETER",
+					"path": "/video",
+					"method": "POST",
+					"name": "youtubeId"
+				},
+				"properties": {
+					"description": "Youtube ID if video was originally fetched from Youtube."
+				}
+			}
+		]
+	},
+	"x-amazon-apigateway-gateway-responses": {
+		"DEFAULT_4XX": {
+			"responseParameters": {
+				"gatewayresponse.header.Access-Control-Allow-Origin": "'*'",
+				"gatewayresponse.header.Access-Control-Allow-Headers": "'*'"
+			},
+			"responseTemplates": {
+				"application/json": "{\n \"message\": $context.error.messageString,\n \"type\": \"$context.error.responseType\",\n \"resourcePath\": \"$context.resourcePath\"\n}"
+			}
+		},
+		"DEFAULT_5XX": {
+			"responseParameters": {
+				"gatewayresponse.header.Access-Control-Allow-Origin": "'*'",
+				"gatewayresponse.header.Access-Control-Allow-Headers": "'*'"
+			},
+			"responseTemplates": {
+				"application/json": "{\n \"message\": $context.error.messageString,\n \"type\": \"$context.error.responseType\",\n \"resourcePath\": \"$context.resourcePath\"\n}"
+			}
+		}
+	},
+	"x-amazon-apigateway-request-validators": {
+		"only-body": {
+			"validateRequestParameters": false,
+			"validateRequestBody": true
+		},
+		"only-params": {
+			"validateRequestParameters": true,
+			"validateRequestBody": false
+		}
+	}
+}

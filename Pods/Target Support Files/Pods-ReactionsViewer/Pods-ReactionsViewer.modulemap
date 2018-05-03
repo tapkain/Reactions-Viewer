@@ -1,0 +1,6 @@
+framework module Pods_ReactionsViewer {
+  umbrella header "Pods-ReactionsViewer-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (4.7.2)
+  - DeepDiff (1.2.0)
+  - Kingfisher (4.7.0)
+  - SwiftCop (1.1.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - DeepDiff (~> 1.2.0)
+  - Kingfisher (~> 4.0)
+  - SwiftCop (~> 1.1.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - DeepDiff
+    - Kingfisher
+    - SwiftCop
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  DeepDiff: 0ee83ac6942d441f677c22e981548c6e0937f2b6
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
+  SwiftCop: 52c1c097f0549f605b986832c1661f3275b82df2
+
+PODFILE CHECKSUM: d70f8e48bb58f2b8fe6db7259771acaf21c9468a
+
+COCOAPODS: 1.5.0
